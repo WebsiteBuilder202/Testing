@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact SUPERPETS | Veterinary Hospital in Khar West, Mumbai</title>
+    <meta name="description" content="Contact SUPERPETS veterinary hospital in Khar West, Mumbai. 24x7 emergency care, appointments, location map. Call +91 98211 12746 or WhatsApp.">
+    
+    <!-- SEO Meta Tags -->
+    <meta name="keywords" content="SUPERPETS contact, veterinary hospital Mumbai, Khar West vet clinic, appointment booking, emergency contact">
+    <meta name="author" content="SUPERPETS - A Veterinary Multi-Speciality LLP">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph Tags -->
+    <meta property="og:title" content="Contact SUPERPETS | Veterinary Hospital in Khar West, Mumbai">
+    <meta property="og:description" content="Contact SUPERPETS veterinary hospital. 24x7 emergency care, appointments, location map.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://superpetsvets.in/contact.html">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+Devanagari:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Core Libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'medical-teal': '#1CA7A6',
+                        'deep-navy': '#0C1B2A',
+                        'warm-gold': '#F5A623',
+                        'success-green': '#27AE60',
+                        'alert-red': '#E74C3C',
+                        'soft-gray': '#F4F6F8'
+                    },
+                    fontFamily: {
+                        'inter': ['Inter', 'sans-serif'],
+                        'devanagari': ['Noto Sans Devanagari', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        .font-devanagari { font-family: 'Noto Sans Devanagari', sans-serif; }
+        .animate-on-scroll { opacity: 0; transform: translateY(24px); transition: all 0.6s ease-out; }
+        .animate-in { opacity: 1; transform: translateY(0); }
+        .emergency-pulse { animation: pulse 2s infinite; }
+        .contact-card { transition: all 0.3s ease; }
+        .contact-card:hover { transform: translateY(-8px); box-shadow: 0 20px 40px rgba(0,0,0,0.1); }
+        .form-input { transition: all 0.3s ease; }
+        .form-input:focus { border-color: #1CA7A6; box-shadow: 0 0 0 3px rgba(28, 167, 166, 0.1); }
+        .form-input.error { border-color: #E74C3C; }
+        .field-error { color: #E74C3C; font-size: 0.875rem; margin-top: 0.25rem; }
+        .booking-modal { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); display: flex; align-items: center; justify-content: center; z-index: 1000; }
+        .modal-content { background: white; border-radius: 12px; max-width: 600px; width: 90%; max-height: 90vh; overflow-y: auto; }
+        .map-container { background: #f0f0f0; border-radius: 12px; min-height: 400px; }
+    </style>
+</head>
+
+<body class="font-inter bg-white text-deep-navy">
+    <!-- Emergency Banner -->
+    <div id="emergency-banner" class="bg-alert-red text-white py-3 px-4 fixed top-0 left-0 right-0 z-50 emergency-pulse">
+        <div class="container mx-auto flex flex-col sm:flex-row items-center justify-between text-center sm:text-left">
+            <div class="flex items-center mb-2 sm:mb-0">
+                <span class="text-xl mr-2">🚨</span>
+                <span class="font-semibold text-sm sm:text-base" data-en="24x7 EMERGENCY CARE" data-hi="🚨 24x7 इमरजेंसी केयर">24x7 EMERGENCY CARE</span>
+            </div>
+            <div class="flex flex-col sm:flex-row items-center space-y-2 sm:space-y-0 sm:space-x-4 text-sm">
+                <a href="tel:+919821112746" class="emergency-call font-semibold hover:underline">
+                    📞 Call: +91 98211 12746
+                </a>
+                <a href="https://wa.me/919821112746" class="emergency-whatsapp font-semibold hover:underline" target="_blank">
+                    💬 WhatsApp
+                </a>
+                <a href="contact.html" class="font-semibold hover:underline" data-en="Get Directions" data-hi="दिशानिर्देश">Get Directions</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg fixed top-16 left-0 right-0 z-40">
+        <div class="container mx-auto px-4">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center">
+                    <a href="index.html" class="text-2xl font-bold text-medical-teal">
+                        SUPERPETS
+                    </a>
+                    <span class="ml-2 text-sm text-gray-600" data-en="24x7 Veterinary Hospital" data-hi="24x7 वेटरनरी हॉस्पिटल">24x7 Veterinary Hospital</span>
+                </div>
+                
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="index.html" class="text-deep-navy hover:text-medical-teal font-medium" data-en="Home" data-hi="होम">Home</a>
+                    <a href="services.html" class="text-deep-navy hover:text-medical-teal font-medium" data-en="Services" data-hi="सेवाएं">Services</a>
+                    <a href="emergency.html" class="text-alert-red hover:text-red-700 font-medium" data-en="Emergency" data-hi="इमरजेंसी">Emergency</a>
+                    <a href="about.html" class="text-deep-navy hover:text-medical-teal font-medium" data-en="About" data-hi="हमारे बारे में">About</a>
+                    <a href="contact.html" class="text-medical-teal font-medium" data-en="Contact" data-hi="संपर्क">Contact</a>
+                    <button id="language-toggle" class="bg-medical-teal text-white px-4 py-2 rounded-lg hover:bg-teal-700 transition-colors" onclick="toggleLanguage()">
+                        हिन्दी
+                    </button>
+                </div>
+                
+                <!-- Mobile Menu Toggle -->
+                <button id="mobile-menu-toggle" class="md:hidden p-2">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="mobile-menu md:hidden bg-white border-t">
+            <div class="px-4 py-2 space-y-2">
+                <a href="index.html" class="block py-2 text-deep-navy hover:text-medical-teal" data-en="Home" data-hi="होम">Home</a>
+                <a href="services.html" class="block py-2 text-deep-navy hover:text-medical-teal" data-en="Services" data-hi="सेवाएं">Services</a>
+                <a href="emergency.html" class="block py-2 text-alert-red hover:text-red-700" data-en="Emergency" data-hi="इमरजेंसी">Emergency</a>
+                <a href="about.html" class="block py-2 text-deep-navy hover:text-medical-teal" data-en="About" data-hi="हमारे बारे में">About</a>
+                <a href="contact.html" class="block py-2 text-medical-teal" data-en="Contact" data-hi="संपर्क">Contact</a>
+                <button class="w-full text-left py-2 text-medical-teal font-medium" onclick="toggleLanguage()" data-en="Switch to Hindi" data-hi="Switch to English">Switch to Hindi</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="bg-medical-teal text-white py-20" style="padding-top: 120px;">
+        <div class="container mx-auto px-4 text-center">
+            <h1 class="text-4xl lg:text-5xl font-bold mb-6" data-en="Contact SUPERPETS" data-hi="SUPERPETS से संपर्क करें">Contact SUPERPETS</h1>
+            <p class="text-xl lg:text-2xl mb-8 opacity-90 max-w-3xl mx-auto leading-relaxed" data-en="We're here for you and your pet 24/7. Multiple ways to reach us for appointments, emergencies, or general inquiries." data-hi="हम आपके और आपके पालतू के लिए 24/7 यहां हैं। अपॉइंटमेंट, इमरजेंसी या सामान्य पूछताछ के लिए हमसे संपर्क करने के कई तरीके।">
+                We're here for you and your pet 24/7. Multiple ways to reach us for appointments, emergencies, or general inquiries.
+            </p>
+        </div>
+    </section>
+
+    <!-- Emergency Contact Cards -->
+    <section class="py-20 bg-alert-red text-white animate-on-scroll">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-12" data-en="🚨 Emergency Contacts" data-hi="🚨 इमरजेंसी संपर्क">🚨 Emergency Contacts</h2>
+            
+            <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                <div class="contact-card bg-white bg-opacity-20 backdrop-blur-sm p-8 rounded-lg border border-white border-opacity-30 text-center">
+                    <div class="text-5xl mb-4">📞</div>
+                    <h3 class="text-2xl font-bold mb-4" data-en="Emergency Hotline" data-hi="इमरजेंसी हॉटलाइन">Emergency Hotline</h3>
+                    <p class="mb-6 text-lg" data-en="24/7 immediate assistance for pet emergencies" data-hi="पालतू आपातकाल के लिए 24/7 तत्काल सहायता">24/7 immediate assistance for pet emergencies</p>
+                    <button onclick="emergencyCall()" class="bg-white text-alert-red px-8 py-4 rounded-lg font-bold text-xl hover:bg-gray-100 transition-all transform hover:scale-105">
+                        +91 98211 12746
+                    </button>
+                </div>
+                
+                <div class="contact-card bg-white bg-opacity-20 backdrop-blur-sm p-8 rounded-lg border border-white border-opacity-30 text-center">
+                    <div class="text-5xl mb-4">💬</div>
+                    <h3 class="text-2xl font-bold mb-4" data-en="WhatsApp Emergency" data-hi="व्हाट्सएप इमरजेंसी">WhatsApp Emergency</h3>
+                    <p class="mb-6 text-lg" data-en="Send photos, videos for immediate guidance" data-hi="तुरंत मार्गदर्शन के लिए फोटो, वीडियो भेजें">Send photos, videos for immediate guidance</p>
+                    <a href="https://wa.me/919821112746" onclick="emergencyWhatsApp()" target="_blank" class="bg-white text-alert-red px-8 py-4 rounded-lg font-bold text-xl hover:bg-gray-100 transition-all transform hover:scale-105 inline-block">
+                        WhatsApp Now
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Methods -->
+    <section class="py-20 bg-white animate-on-scroll">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-16 text-deep-navy" data-en="How to Reach Us" data-hi="हम तक कैसे पहुंचें">How to Reach Us</h2>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Phone -->
+                <div class="contact-card bg-soft-gray p-8 rounded-lg shadow-lg text-center">
+                    <div class="text-4xl mb-4">📞</div>
+                    <h3 class="text-2xl font-semibold mb-4 text-medical-teal" data-en="Phone" data-hi="फोन">Phone</h3>
+                    <p class="text-gray-700 mb-4" data-en="Call us for appointments, inquiries, or emergency assistance" data-hi="अपॉइंटमेंट, पूछताछ या इमरजेंसी सहायता के लिए हमें कॉल करें">Call us for appointments, inquiries, or emergency assistance</p>
+                    <div class="space-y-2">
+                        <a href="tel:+919821112746" class="block text-lg font-semibold text-deep-navy hover:text-medical-teal">
+                            +91 98211 12746
+                        </a>
+                        <p class="text-sm text-gray-600" data-en="Available 24/7" data-hi="24/7 उपलब्ध">Available 24/7</p>
+                    </div>
+                </div>
+                
+                <!-- WhatsApp -->
+                <div class="contact-card bg-soft-gray p-8 rounded-lg shadow-lg text-center">
+                    <div class="text-4xl mb-4">💬</div>
+                    <h3 class="text-2xl font-semibold mb-4 text-medical-teal" data-en="WhatsApp" data-hi="व्हाट्सएप">WhatsApp</h3>
+                    <p class="text-gray-700 mb-4" data-en="Quick questions, appointment requests, or emergency contact" data-hi="त्वरित सवाल, अपॉइंटमेंट अनुरोध, या इमरजेंसी संपर्क">Quick questions, appointment requests, or emergency contact</p>
+                    <div class="space-y-2">
+                        <a href="https://wa.me/919821112746" target="_blank" class="block text-lg font-semibold text-deep-navy hover:text-medical-teal">
+                            https://wa.me/919821112746
+                        </a>
+                        <p class="text-sm text-gray-600" data-en="Usually responds within minutes" data-hi="आमतौर पर मिनटों के भीतर प्रतिक्रिया देता है">Usually responds within minutes</p>
+                    </div>
+                </div>
+                
+                <!-- Email -->
+                <div class="contact-card bg-soft-gray p-8 rounded-lg shadow-lg text-center">
+                    <div class="text-4xl mb-4">📧</div>
+                    <h3 class="text-2xl font-semibold mb-4 text-medical-teal" data-en="Email" data-hi="ईमेल">Email</h3>
+                    <p class="text-gray-700 mb-4" data-en="Detailed inquiries, medical records, or non-urgent questions" data-hi="विस्तृत पूछताछ, चिकित्सा रिकॉर्ड, या गैर-आपातकालीन सवाल">Detailed inquiries, medical records, or non-urgent questions</p>
+                    <div class="space-y-2">
+                        <a href="mailto:info@superpetsvets.in" class="block text-lg font-semibold text-deep-navy hover:text-medical-teal">
+                            info@superpetsvets.in
+                        </a>
+                        <p class="text-sm text-gray-600" data-en="Response within 24 hours" data-hi="24 घंटे के भीतर प्रतिक्रिया">Response within 24 hours</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Location & Hours -->
+    <section class="py-20 bg-soft-gray animate-on-scroll">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-16 text-deep-navy" data-en="Visit Us" data-hi="हमसे मिलें">Visit Us</h2>
+            
+            <div class="grid lg:grid-cols-2 gap-12">
+                <!-- Location Information -->
+                <div>
+                    <div class="bg-white p-8 rounded-lg shadow-lg">
+                        <h3 class="text-2xl font-semibold mb-6 text-medical-teal" data-en="📍 Address" data-hi="📍 पता">📍 Address</h3>
+                        <div class="space-y-3 mb-6">
+                            <p class="text-lg font-medium text-deep-navy" data-en="Ground to 3rd Floor, Mee Mee Tower" data-hi="ग्राउंड से 3rd फ्लोर, मी मी टावर">
+                                Ground to 3rd Floor, Mee Mee Tower
+                            </p>
+                            <p class="text-lg text-gray-700" data-en="8th Rd, Khar West, Mumbai, Maharashtra 400052" data-hi="8th रोड, खार वेस्ट, मुंबई, महाराष्ट्र 400052">
+                                8th Rd, Khar West, Mumbai, Maharashtra 400052
+                            </p>
+                            <p class="text-lg font-medium text-medical-teal" data-en="🗺️ Plus Code: 3R8P+Q3" data-hi="🗺️ प्लस कोड: 3R8P+Q3">
+                                🗺️ Plus Code: 3R8P+Q3
+                            </p>
+                        </div>
+                        
+                        <div class="flex flex-col sm:flex-row gap-3 mb-8">
+                            <button onclick="copyAddress()" class="bg-medical-teal text-white px-6 py-3 rounded-lg font-semibold hover:bg-teal-700 transition-colors" data-en="Copy Address" data-hi="पता कॉपी करें">
+                                Copy Address
+                            </button>
+                            <a href="https://maps.google.com" target="_blank" class="bg-gray-200 text-deep-navy px-6 py-3 rounded-lg font-semibold hover:bg-gray-300 transition-colors text-center" data-en="Open in Google Maps" data-hi="Google मानचित्र में खोलें">
+                                Open in Google Maps
+                            </a>
+                        </div>
+                        
+                        <h3 class="text-2xl font-semibold mb-4 text-medical-teal" data-en="🕐 Hours" data-hi="🕐 समय">🕐 Hours</h3>
+                        <div class="bg-success-green bg-opacity-10 p-4 rounded-lg mb-6">
+                            <p class="text-success-green font-bold text-lg" data-en="✅ Open 24 Hours, 7 Days a Week" data-hi="✅ 24 घंटे खुला, 7 दिन सप्ताह">✅ Open 24 Hours, 7 Days a Week</p>
+                            <p class="text-gray-600 mt-2" data-en="Emergency care available 24/7. Routine appointments during extended hours." data-hi="इमरजेंसी केयर 24/7 उपलब्ध। विस्तारित समय के दौरान रूटीन अपॉइंटमेंट।">
+                                Emergency care available 24/7. Routine appointments during extended hours.
+                            </p>
+                        </div>
+                        
+                        <h3 class="text-2xl font-semibold mb-4 text-medical-teal" data-en="🚗 Parking" data-hi="🚗 पार्किंग">🚗 Parking</h3>
+                        <p class="text-gray-700 mb-6" data-en="Free parking available at Mee Mee Tower. Follow signs for SUPERPETS entrance." data-hi="मी मी टावर में मुफ्त पार्किंग उपलब्ध। SUPERPETS प्रवेश द्वार के लिए संकेतों का पालन करें।">
+                            Free parking available at Mee Mee Tower. Follow signs for SUPERPETS entrance.
+                        </p>
+                        
+                        <h3 class="text-2xl font-semibold mb-4 text-medical-teal" data-en="🚇 Public Transport" data-hi="🚇 सार्वजनिक परिवहन">🚇 Public Transport</h3>
+                        <div class="space-y-2 text-gray-700">
+                            <p data-en="• Nearest stations: Khar Road (1.2km), Bandra (2.1km)" data-hi="• निकटतम स्टेशन: खार रोड (1.2किमी), बांद्रा (2.1किमी)">• Nearest stations: Khar Road (1.2km), Bandra (2.1km)</p>
+                            <p data-en="• Auto-rickshaw and taxi available 24/7" data-hi="• ऑटो-रिक्शा और टैक्सी 24/7 उपलब्ध">• Auto-rickshaw and taxi available 24/7</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Map -->
+                <div>
+                    <div class="bg-white p-8 rounded-lg shadow-lg">
+                        <h3 class="text-2xl font-semibold mb-6 text-medical-teal" data-en="📍 Find Us on Map" data-hi="📍 मानचित्र पर हमें खोजें">📍 Find Us on Map</h3>
+                        <div class="map-container flex items-center justify-center mb-6">
+                            <div class="text-center">
+                                <div class="text-6xl mb-4">🗺️</div>
+                                <h4 class="text-xl font-semibold mb-2" data-en="Interactive Map" data-hi="इंटरएक्टिव मानचित्र">Interactive Map</h4>
+                                <p class="text-gray-600 mb-4" data-en="Get directions with real-time traffic updates" data-hi="वास्तविक समय ट्रैफिक अपडेट के साथ दिशानिर्देश प्राप्त करें">Get directions with real-time traffic updates</p>
+                                <button onclick="openMaps()" class="bg-medical-teal text-white px-6 py-3 rounded-lg font-semibold hover:bg-teal-700 transition-colors" data-en="Get Directions" data-hi="दिशानिर्देश लें">
+                                    Get Directions
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div class="grid md:grid-cols-2 gap-4">
+                            <div class="text-center p-4 bg-soft-gray rounded-lg">
+                                <div class="text-2xl mb-2">📍</div>
+                                <h4 class="font-semibold mb-1" data-en="Plus Code" data-hi="प्लस कोड">Plus Code</h4>
+                                <p class="text-sm text-gray-600">3R8P+Q3</p>
+                            </div>
+                            <div class="text-center p-4 bg-soft-gray rounded-lg">
+                                <div class="text-2xl mb-2">🕐</div>
+                                <h4 class="font-semibold mb-1" data-en="Less Busy Times" data-hi="कम व्यस्त समय">Less Busy Times</h4>
+                                <p class="text-sm text-gray-600" data-en="Saturdays 6 AM–12 PM" data-hi="शनिवार 6 AM–12 PM">Saturdays 6 AM–12 PM</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Appointment Booking Form -->
+    <section class="py-20 bg-white animate-on-scroll">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto">
+                <h2 class="text-4xl font-bold text-center mb-16 text-deep-navy" data-en="Book an Appointment" data-hi="अपॉइंटमेंट बुक करें">Book an Appointment</h2>
+                
+                <div class="bg-soft-gray p-8 rounded-lg shadow-lg">
+                    <form class="booking-form" id="appointment-form">
+                        <div class="grid md:grid-cols-2 gap-8">
+                            <!-- Pet Information -->
+                            <div>
+                                <h3 class="text-2xl font-semibold mb-6 text-medical-teal" data-en="🐕 Pet Information" data-hi="🐕 पालतू जानकारी">🐕 Pet Information</h3>
+                                
+                                <div class="space-y-4">
+                                    <div>
+                                        <label class="block text-sm font-medium text-deep-navy mb-2" data-en="Pet Name *" data-hi="पालतू का नाम *">Pet Name *</label>
+                                        <input type="text" name="pet-name" required class="form-input w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none" placeholder="Enter pet's name">
+                                    </div>
+                                    
+                                    <div class="grid grid-cols-2 gap-4">
+                                        <div>
+                                            <label class="block text-sm font-medium text-deep-navy mb-2" data-en="Species *" data-hi="प्रजाति *">Species *</label>
+                                            <select name="species" required class="form-input w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none">
+                                                <option value="" data-en="Select species" data-hi="प्रजाति चुनें">Select species</option>
+                                                <option value="dog" data-en="Dog" data-hi="कुत्ता">Dog</option>
+                                                <option value="cat" data-en="Cat" data-hi="बिल्ली">Cat</option>
+                                                <option value="other" data-en="Other" data-hi="अन्य">Other</option>
+                                            </select>
+                                        </div>
+                                        
+                                        <div>
+                                            <label class="block text-sm font-medium text-deep-navy mb-2" data-en="Age" data-hi="उम्र">Age</label>
+                                            <input type="text" name="age" class="form-input w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none" placeholder="e.g., 2 years">
+                                        </div>
+                                    </div>
+                                    
+                                    <div>
+                                        <label class="block text-sm font-medium text-deep-navy mb-2" data-en="Breed" data-hi="नस्ल">Breed</label>
+                                        <input type="text" name="breed" class="form-input w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none" placeholder="e.g., Golden Retriever">
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Appointment Details -->
+                            <div>
+                                <h3 class="text-2xl font-semibold mb-6 text-medical-teal" data-en="📅 Appointment Details" data-hi="📅 अपॉइंटमेंट विवरण">📅 Appointment Details</h3>
+                                
+                                <div class="space-y-4">
+                                    <div>
+                                        <label class="block text-sm font-medium text-deep-navy mb-2" data-en="Service Type *" data-hi="सेवा प्रकार *">Service Type *</label>
+                                        <select name="service" required class="form-input w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none">
+                                            <option value="" data-en="Select service" data-hi="सेवा चुनें">Select service</option>
+                                            <option value="emergency" data-en="Emergency Care" data-hi="इमरजेंसी केयर">Emergency Care</option>
+                                            <option value="consultation" data-en="General Consultation" data-hi="सामान्य परामर्श">General Consultation</option>
+                                            <option value="surgery" data-en="Surgery Consultation" data-hi="सर्जरी परामर्श">Surgery Consultation</option>
+                                            <option value="physiotherapy" data-en="Physiotherapy" data-hi="फिजियोथेरेपी">Physiotherapy</option>
+                                            <option value="dental" data-en="Dental Care" data-hi="डेंटल केयर">Dental Care</option>
+                                            <option value="vaccination" data-en="Vaccination" data-hi="टीकाकरण">Vaccination</option>
+                                            <option value="checkup" data-en="Health Checkup" data-hi="स्वास्थ्य जांच">Health Checkup</option>
+                                        </select>
+                                    </div>
+                                    
+                                    <div class="grid grid-cols-2 gap-4">
+                                        <div>
+                                            <label class="block text-sm font-medium text-deep-navy mb-2" data-en="Preferred Date" data-hi="पसंदीदा तारीख">Preferred Date</label>
+                                            <input type="date" name="preferred-date" class="form-input w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none">
+                                        </div>
+                                        
+                                        <div>
+                                            <label class="block text-sm font-medium text-deep-navy mb-2" data-en="Preferred Time" data-hi="पसंदीदा समय">Preferred Time</label>
+                                            <select name="preferred-time" class="form-input w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none">
+                                                <option value="" data-en="Select time" data-hi="समय चुनें">Select time</option>
+                                                <option value="morning" data-en="Morning (9 AM - 12 PM)" data-hi="सुबह (9 AM - 12 PM)">Morning (9 AM - 12 PM)</option>
+                                                <option value="afternoon" data-en="Afternoon (12 PM - 5 PM)" data-hi="दोपहर (12 PM - 5 PM)">Afternoon (12 PM - 5 PM)</option>
+                                                <option value="evening" data-en="Evening (5 PM - 8 PM)" data-hi="शाम (5 PM - 8 PM)">Evening (5 PM - 8 PM)</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    
+                                    <div>
+                                        <label class="block text-sm font-medium text-deep-navy mb-2" data-en="Reason for Visit" data-hi="यात्रा का कारण">Reason for Visit</label>
+                                        <textarea name="concern" rows="3" class="form-input w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none" placeholder="Brief description of your pet's condition or reason for visit"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Owner Information -->
+                        <div class="mt-8">
+                            <h3 class="text-2xl font-semibold mb-6 text-medical-teal" data-en="👤 Your Information" data-hi="👤 आपकी जानकारी">👤 Your Information</h3>
+                            
+                            <div class="grid md:grid-cols-2 gap-8">
+                                <div class="space-y-4">
+                                    <div>
+                                        <label class="block text-sm font-medium text-deep-navy mb-2" data-en="Your Name *" data-hi="आपका नाम *">Your Name *</label>
+                                        <input type="text" name="owner-name" required class="form-input w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none" placeholder="Enter your full name">
+                                    </div>
+                                    
+                                    <div>
+                                        <label class="block text-sm font-medium text-deep-navy mb-2" data-en="Phone Number *" data-hi="फोन नंबर *">Phone Number *</label>
+                                        <input type="tel" name="phone" required class="form-input w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none" placeholder="+91 98765 43210">
+                                    </div>
+                                </div>
+                                
+                                <div class="space-y-4">
+                                    <div>
+                                        <label class="block text-sm font-medium text-deep-navy mb-2" data-en="Email Address" data-hi="ईमेल पता">Email Address</label>
+                                        <input type="email" name="email" class="form-input w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none" placeholder="your.email@example.com">
+                                    </div>
+                                    
+                                    <div>
+                                        <label class="block text-sm font-medium text-deep-navy mb-2" data-en="Preferred Contact Method" data-hi="पसंदीदा संपर्क विधि">Preferred Contact Method</label>
+                                        <select name="contact-method" class="form-input w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none">
+                                            <option value="phone" data-en="Phone Call" data-hi="फोन कॉल">Phone Call</option>
+                                            <option value="whatsapp" data-en="WhatsApp" data-hi="व्हाट्सएप">WhatsApp</option>
+                                            <option value="email" data-en="Email" data-hi="ईमेल">Email</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Special Instructions -->
+                        <div class="mt-8">
+                            <h3 class="text-2xl font-semibold mb-4 text-medical-teal" data-en="📝 Special Instructions" data-hi="📝 विशेष निर्देश">📝 Special Instructions</h3>
+                            <textarea name="instructions" rows="3" class="form-input w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none" placeholder="Any special instructions or additional information..."></textarea>
+                        </div>
+                        
+                        <!-- Submit Button -->
+                        <div class="mt-8 text-center">
+                            <button type="submit" class="bg-medical-teal text-white px-12 py-4 rounded-lg font-bold text-xl hover:bg-teal-700 transition-all transform hover:scale-105">
+                                📅 <span data-en="Book Appointment" data-hi="अपॉइंटमेंट बुक करें">Book Appointment</span>
+                            </button>
+                            <p class="text-sm text-gray-600 mt-4" data-en="We'll confirm your appointment within 30 minutes via your preferred contact method." data-hi="हम आपकी पसंदीदा संपर्क विधि के माध्यम से 30 मिनट के भीतर आपकी अपॉइंटमेंट की पुष्टि करेंगे।">
+                                We'll confirm your appointment within 30 minutes via your preferred contact method.
+                            </p>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-20 bg-soft-gray animate-on-scroll">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-16 text-deep-navy" data-en="Frequently Asked Questions" data-hi="अक्सर पूछे जाने वाले प्रश्न">Frequently Asked Questions</h2>
+            
+            <div class="max-w-4xl mx-auto space-y-6">
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <h3 class="text-xl font-semibold mb-3 text-medical-teal" data-en="🏥 Are you really open 24 hours?" data-hi="🏥 क्या आप वास्तव में 24 घंटे खुले हैं?">🏥 Are you really open 24 hours?</h3>
+                    <p class="text-gray-700" data-en="Yes! Our emergency team is on-site 24/7 to handle urgent cases. Routine appointments are also available during extended hours, 7 days a week." data-hi="हां! हमारी इमरजेंसी टीम 24/7 ऑन-साइट है ताकि आपातकालीन मामलों को संभाला जा सके। रूटीन अपॉइंटमेंट भी सप्ताह के 7 दिन विस्तारित समय के दौरान उपलब्ध हैं।">
+                        Yes! Our emergency team is on-site 24/7 to handle urgent cases. Routine appointments are also available during extended hours, 7 days a week.
+                    </p>
+                </div>
+                
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <h3 class="text-xl font-semibold mb-3 text-medical-teal" data-en="🚗 Is parking available at your facility?" data-hi="🚗 क्या आपकी सुविधा में पार्किंग उपलब्ध है?">🚗 Is parking available at your facility?</h3>
+                    <p class="text-gray-700" data-en="Yes, parking is available at the Mee Mee Tower facility. Ask our team for directions to the nearest parking when you arrive." data-hi="हां, मी मी टावर सुविधा में पार्किंग उपलब्ध है। पहुंचने पर निकटतम पार्किंग के लिए दिशाओं के लिए हमारी टीम से पूछें।">
+                        Yes, parking is available at the Mee Mee Tower facility. Ask our team for directions to the nearest parking when you arrive.
+                    </p>
+                </div>
+                
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <h3 class="text-xl font-semibold mb-3 text-medical-teal" data-en="💳 What payment methods do you accept?" data-hi="💳 आप कौन से भुगतान विधियों को स्वीकार करते हैं?">💳 What payment methods do you accept?</h3>
+                    <p class="text-gray-700" data-en="We accept cash, credit/debit cards, and digital payments (UPI, Paytm, Google Pay). Payment plans are available for major procedures." data-hi="हम नकद, क्रेडिट/डेबिट कार्ड और डिजिटल भुगतान (UPI, Paytm, Google Pay) स्वीकार करते हैं। प्रमुख प्रक्रियाओं के लिए भुगतान योजनाएं उपलब्ध हैं।">
+                        We accept cash, credit/debit cards, and digital payments (UPI, Paytm, Google Pay). Payment plans are available for major procedures.
+                    </p>
+                </div>
+                
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <h3 class="text-xl font-semibold mb-3 text-medical-teal" data-en="🏳️‍🌈 Are you LGBTQ+ friendly?" data-hi="🏳️‍🌈 क्या आप LGBTQ+ फ्रेंडली हैं?">🏳️‍🌈 Are you LGBTQ+ friendly?</h3>
+                    <p class="text-gray-700" data-en="Absolutely! SUPERPETS is proud to be LGBTQ+ friendly and women-owned. Everyone is welcome here, and we strive to create a safe, inclusive environment for all families and their beloved pets." data-hi="बिल्कुल! SUPERPETS LGBTQ+ फ्रेंडली और महिलाओं के स्वामित्व वाला होने पर गर्व करता है। यहां सभी का स्वागत है, और हम सभी परिवारों और उनके प्यारे पालतू जानवरों के लिए एक सुरक्षित, समावेशी वातावरण बनाने का प्रयास करते हैं।">
+                        Absolutely! SUPERPETS is proud to be LGBTQ+ friendly and women-owned. Everyone is welcome here, and we strive to create a safe, inclusive environment for all families and their beloved pets.
+                    </p>
+                </div>
+                
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <h3 class="text-xl font-semibold mb-3 text-medical-teal" data-en="⏰ How quickly can I get an appointment?" data-hi="⏰ मुझे अपॉइंटमेंट कितनी जल्दी मिल सकती है?">⏰ How quickly can I get an appointment?</h3>
+                    <p class="text-gray-700" data-en="Emergency cases are seen immediately. Routine appointments can usually be scheduled within 24-48 hours. We also offer same-day appointments for urgent but non-emergency situations." data-hi="इमरजेंसी के मामलों को तुरंत देखा जाता है। रूटीन अपॉइंटमेंट आमतौर पर 24-48 घंटे के भीतर शेड्यूल की जा सकती हैं। हम तत्काल लेकिन गैर-आपातकालीन स्थितियों के लिए भी Same-day अपॉइंटमेंट की पेशकश करते हैं।">
+                        Emergency cases are seen immediately. Routine appointments can usually be scheduled within 24-48 hours. We also offer same-day appointments for urgent but non-emergency situations.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="bg-medical-teal text-white py-20">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-4xl font-bold mb-6" data-en="Ready to Visit Us?" data-hi="हमसे मिलने के लिए तैयार हैं?">Ready to Visit Us?</h2>
+            <p class="text-xl mb-8 opacity-90 max-w-3xl mx-auto" data-en="Don't wait until it's an emergency. Schedule a wellness checkup or consultation today to keep your pet healthy and happy." data-hi="जब तक यह आपातकाल नहीं बन जाता तब तक प्रतीक्षा न करें। अपने पालतू को स्वस्थ और खुश रखने के लिए आज ही एक वेलनेस जांच या परामर्श शेड्यूल करें।">
+                Don't wait until it's an emergency. Schedule a wellness checkup or consultation today to keep your pet healthy and happy.
+            </p>
+            
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="#appointment-form" class="bg-white text-medical-teal px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition-all transform hover:scale-105">
+                    📅 <span data-en="Book Appointment" data-hi="अपॉइंटमेंट बुक करें">Book Appointment</span>
+                </a>
+                <button onclick="emergencyCall()" class="bg-warm-gold text-deep-navy px-8 py-4 rounded-lg font-semibold text-lg hover:bg-yellow-500 transition-all transform hover:scale-105">
+                    📞 <span data-en="Call Emergency" data-hi="इमरजेंसी कॉल करें">Call Emergency</span>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-deep-navy text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-2xl font-bold mb-4">SUPERPETS</h3>
+                    <p class="text-gray-300 leading-relaxed mb-4" data-en="24x7 Veterinary Multi-Speciality Hospital<br>Khar West, Mumbai" data-hi="24x7 वेटरनरी मल्टी-स्पेशलिटी हॉस्पिटल<br>खार वेस्ट, मुंबई">
+                        24x7 Veterinary Multi-Speciality Hospital<br>
+                        Khar West, Mumbai
+                    </p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="bg-medical-teal text-white px-3 py-1 rounded-full text-sm" data-en="LGBTQ+ Friendly" data-hi="LGBTQ+ फ्रेंडली">LGBTQ+ Friendly</span>
+                        <span class="bg-warm-gold text-deep-navy px-3 py-1 rounded-full text-sm" data-en="Women-Owned" data-hi="महिलाओं के स्वामित्व वाला">Women-Owned</span>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4" data-en="Quick Links" data-hi="त्वरित लिंक्स">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="text-gray-300 hover:text-medical-teal" data-en="Home" data-hi="होम">Home</a></li>
+                        <li><a href="services.html" class="text-gray-300 hover:text-medical-teal" data-en="Services" data-hi="सेवाएं">Services</a></li>
+                        <li><a href="about.html" class="text-gray-300 hover:text-medical-teal" data-en="About" data-hi="हमारे बारे में">About</a></li>
+                        <li><a href="contact.html" class="text-gray-300 hover:text-medical-teal" data-en="Contact" data-hi="संपर्क">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4" data-en="Contact" data-hi="संपर्क">Contact</h4>
+                    <ul class="space-y-2 text-gray-300">
+                        <li>📞 <a href="tel:+919821112746" class="hover:text-medical-teal">+91 98211 12746</a></li>
+                        <li>💬 <a href="https://wa.me/919821112746" class="hover:text-medical-teal" target="_blank">WhatsApp</a></li>
+                        <li>📧 <a href="mailto:info@superpetsvets.in" class="hover:text-medical-teal">info@superpetsvets.in</a></li>
+                        <li>🏥 <a href="contact.html" class="hover:text-medical-teal" data-en="Khar West, Mumbai" data-hi="खार वेस्ट, मुंबई">Khar West, Mumbai</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4" data-en="Follow Us" data-hi="हमें फॉलो करें">Follow Us</h4>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-300 hover:text-medical-teal text-xl">📘</a>
+                        <a href="#" class="text-gray-300 hover:text-medical-teal text-xl">📷</a>
+                        <a href="https://maps.google.com" target="_blank" class="text-gray-300 hover:text-medical-teal text-xl">🗺️</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-300">
+                <p>&copy; 2025 SUPERPETS. All Rights Reserved. | 
+                    <a href="#" class="hover:text-medical-teal" data-en="Privacy Policy" data-hi="गोपनीयता नीति">Privacy Policy</a> | 
+                    <a href="#" class="hover:text-medical-teal" data-en="Terms" data-hi="नियम">Terms</a> | 
+                    <a href="#" class="hover:text-medical-teal" data-en="Medical Disclaimer" data-hi="चिकित्सा अस्वीकरण">Medical Disclaimer</a>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Load Main JavaScript -->
+    <script src="main.js"></script>
+    
+    <script>
+        // Utility functions for contact page
+        function copyAddress() {
+            const address = "Ground to 3rd Floor, Mee Mee Tower, 8th Rd, Khar West, Mumbai, Maharashtra 400052";
+            navigator.clipboard.writeText(address).then(() => {
+                if (window.superpetsApp) {
+                    window.superpetsApp.showNotification('Address copied to clipboard!', 'success');
+                }
+            });
+        }
+        
+        function openMaps() {
+            const address = "Ground to 3rd Floor, Mee Mee Tower, 8th Rd, Khar West, Mumbai, Maharashtra 400052";
+            const encodedAddress = encodeURIComponent(address);
+            window.open(`https://maps.google.com?q=${encodedAddress}`, '_blank');
+        }
+        
+        // Address copy functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const copyButton = document.querySelector('button[onclick="copyAddress()"]');
+            if (copyButton) {
+                copyButton.addEventListener('click', function() {
+                    copyAddress();
+                });
+            }
+        });
+    </script>
+</body>
+</html>

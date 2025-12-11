@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About SUPERPETS | Trusted Veterinary Hospital in Mumbai</title>
+    <meta name="description" content="Learn about SUPERPETS - Women-owned, LGBTQ+ friendly veterinary hospital. Meet our expert team, explore our facilities, and discover our commitment to exceptional pet care.">
+    
+    <!-- SEO Meta Tags -->
+    <meta name="keywords" content="SUPERPETS veterinary hospital, women owned vet clinic, LGBTQ+ friendly vet, Mumbai veterinary team, pet hospital about us">
+    <meta name="author" content="SUPERPETS - A Veterinary Multi-Speciality LLP">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph Tags -->
+    <meta property="og:title" content="About SUPERPETS | Trusted Veterinary Hospital in Mumbai">
+    <meta property="og:description" content="Meet the SUPERPETS team and learn about our commitment to exceptional veterinary care in Mumbai.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://superpetsvets.in/about.html">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+Devanagari:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Core Libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'medical-teal': '#1CA7A6',
+                        'deep-navy': '#0C1B2A',
+                        'warm-gold': '#F5A623',
+                        'success-green': '#27AE60',
+                        'alert-red': '#E74C3C',
+                        'soft-gray': '#F4F6F8'
+                    },
+                    fontFamily: {
+                        'inter': ['Inter', 'sans-serif'],
+                        'devanagari': ['Noto Sans Devanagari', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        .font-devanagari { font-family: 'Noto Sans Devanagari', sans-serif; }
+        .animate-on-scroll { opacity: 0; transform: translateY(24px); transition: all 0.6s ease-out; }
+        .animate-in { opacity: 1; transform: translateY(0); }
+        .emergency-pulse { animation: pulse 2s infinite; }
+        .team-card { transition: all 0.3s ease; }
+        .team-card:hover { transform: translateY(-8px); box-shadow: 0 20px 40px rgba(0,0,0,0.1); }
+        .timeline-item { position: relative; }
+        .timeline-item::before { content: ''; position: absolute; left: 20px; top: 0; bottom: 0; width: 2px; background: #1CA7A6; }
+        .timeline-item:last-child::before { display: none; }
+        .timeline-dot { position: relative; z-index: 1; }
+        .stats-counter { font-variant-numeric: tabular-nums; }
+    </style>
+</head>
+
+<body class="font-inter bg-white text-deep-navy">
+    <!-- Emergency Banner -->
+    <div id="emergency-banner" class="bg-alert-red text-white py-3 px-4 fixed top-0 left-0 right-0 z-50 emergency-pulse">
+        <div class="container mx-auto flex flex-col sm:flex-row items-center justify-between text-center sm:text-left">
+            <div class="flex items-center mb-2 sm:mb-0">
+                <span class="text-xl mr-2">🚨</span>
+                <span class="font-semibold text-sm sm:text-base" data-en="24x7 EMERGENCY CARE" data-hi="🚨 24x7 इमरजेंसी केयर">24x7 EMERGENCY CARE</span>
+            </div>
+            <div class="flex flex-col sm:flex-row items-center space-y-2 sm:space-y-0 sm:space-x-4 text-sm">
+                <a href="tel:+919821112746" class="emergency-call font-semibold hover:underline">
+                    📞 Call: +91 98211 12746
+                </a>
+                <a href="https://wa.me/919821112746" class="emergency-whatsapp font-semibold hover:underline" target="_blank">
+                    💬 WhatsApp
+                </a>
+                <a href="contact.html" class="font-semibold hover:underline" data-en="Get Directions" data-hi="दिशानिर्देश">Get Directions</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg fixed top-16 left-0 right-0 z-40">
+        <div class="container mx-auto px-4">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center">
+                    <a href="index.html" class="text-2xl font-bold text-medical-teal">
+                        SUPERPETS
+                    </a>
+                    <span class="ml-2 text-sm text-gray-600" data-en="24x7 Veterinary Hospital" data-hi="24x7 वेटरनरी हॉस्पिटल">24x7 Veterinary Hospital</span>
+                </div>
+                
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="index.html" class="text-deep-navy hover:text-medical-teal font-medium" data-en="Home" data-hi="होम">Home</a>
+                    <a href="services.html" class="text-deep-navy hover:text-medical-teal font-medium" data-en="Services" data-hi="सेवाएं">Services</a>
+                    <a href="emergency.html" class="text-alert-red hover:text-red-700 font-medium" data-en="Emergency" data-hi="इमरजेंसी">Emergency</a>
+                    <a href="about.html" class="text-medical-teal font-medium" data-en="About" data-hi="हमारे बारे में">About</a>
+                    <a href="contact.html" class="text-deep-navy hover:text-medical-teal font-medium" data-en="Contact" data-hi="संपर्क">Contact</a>
+                    <button id="language-toggle" class="bg-medical-teal text-white px-4 py-2 rounded-lg hover:bg-teal-700 transition-colors" onclick="toggleLanguage()">
+                        हिन्दी
+                    </button>
+                </div>
+                
+                <!-- Mobile Menu Toggle -->
+                <button id="mobile-menu-toggle" class="md:hidden p-2">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="mobile-menu md:hidden bg-white border-t">
+            <div class="px-4 py-2 space-y-2">
+                <a href="index.html" class="block py-2 text-deep-navy hover:text-medical-teal" data-en="Home" data-hi="होम">Home</a>
+                <a href="services.html" class="block py-2 text-deep-navy hover:text-medical-teal" data-en="Services" data-hi="सेवाएं">Services</a>
+                <a href="emergency.html" class="block py-2 text-alert-red hover:text-red-700" data-en="Emergency" data-hi="इमरजेंसी">Emergency</a>
+                <a href="about.html" class="block py-2 text-medical-teal" data-en="About" data-hi="हमारे बारे में">About</a>
+                <a href="contact.html" class="block py-2 text-deep-navy hover:text-medical-teal" data-en="Contact" data-hi="संपर्क">Contact</a>
+                <button class="w-full text-left py-2 text-medical-teal font-medium" onclick="toggleLanguage()" data-en="Switch to Hindi" data-hi="Switch to English">Switch to Hindi</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="bg-medical-teal text-white py-20" style="padding-top: 120px;">
+        <div class="container mx-auto px-4 text-center">
+            <h1 class="text-4xl lg:text-5xl font-bold mb-6" data-en="About SUPERPETS" data-hi="SUPERPETS के बारे में">About SUPERPETS</h1>
+            <p class="text-xl lg:text-2xl mb-8 opacity-90 max-w-3xl mx-auto leading-relaxed" data-en="Compassionate, clinical care for your beloved pets. Women-owned, LGBTQ+ friendly, and committed to excellence in veterinary medicine." data-hi="आपके प्यारे पालतू जानवरों के लिए करुणामय, नैदानिक देखभाल। महिलाओं के स्वामित्व वाला, LGBTQ+ फ्रेंडली, और पशु चिकित्सा में उत्कृष्टता के लिए प्रतिबद्ध।">
+                Compassionate, clinical care for your beloved pets. Women-owned, LGBTQ+ friendly, and committed to excellence in veterinary medicine.
+            </p>
+            
+            <div class="flex flex-wrap justify-center gap-4">
+                <div class="bg-white bg-opacity-20 px-6 py-3 rounded-full">
+                    <span class="font-semibold">⭐ 4.2 Rating</span>
+                </div>
+                <div class="bg-white bg-opacity-20 px-6 py-3 rounded-full">
+                    <span class="font-semibold">🏥 24x7 Emergency</span>
+                </div>
+                <div class="bg-white bg-opacity-20 px-6 py-3 rounded-full">
+                    <span class="font-semibold">👩‍⚕️ Women-Owned</span>
+                </div>
+                <div class="bg-white bg-opacity-20 px-6 py-3 rounded-full">
+                    <span class="font-semibold">🏳️‍🌈 LGBTQ+ Friendly</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mission & Values -->
+    <section class="py-20 bg-white animate-on-scroll">
+        <div class="container mx-auto px-4">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h2 class="text-4xl font-bold mb-8 text-deep-navy" data-en="Our Mission" data-hi="हमारा मिशन">Our Mission</h2>
+                    <p class="text-lg text-gray-700 mb-6 leading-relaxed" data-en="At SUPERPETS, we believe every pet deserves exceptional medical care delivered with compassion and respect. Our mission is to provide comprehensive, 24/7 veterinary services that save lives, restore health, and strengthen the bond between pets and their families." data-hi="सुपरपेट्स में, हम मानते हैं कि हर पालतू को करुणा और सम्मान के साथ दी जाने वाली असाधारण चिकित्सा देखभाल की हकदार है। हमारा मिशन व्यापक, 24/7 पशु चिकित्सा सेवाएं प्रदान करना है जो जीवन बचाती हैं, स्वास्थ्य को पुनर्स्थापित करती हैं, और पालतू जानवरों और उनके परिवारों के बीच के बंधन को मजबूत करती हैं।">
+                        At SUPERPETS, we believe every pet deserves exceptional medical care delivered with compassion and respect. Our mission is to provide comprehensive, 24/7 veterinary services that save lives, restore health, and strengthen the bond between pets and their families.
+                    </p>
+                    
+                    <div class="mb-8">
+                        <h3 class="text-2xl font-semibold mb-4 text-medical-teal" data-en="Our Core Values" data-hi="हमारे मूल मूल्य">Our Core Values</h3>
+                        <ul class="space-y-3">
+                            <li class="flex items-start">
+                                <span class="text-medical-teal mr-3 text-xl">❤️</span>
+                                <div>
+                                    <strong data-en="Compassion:" data-hi="करुणा:">Compassion:</strong>
+                                    <span data-en=" Every pet is treated with love and dignity" data-hi=" हर पालतू को प्यार और गरिमा के साथ मिलता है"> Every pet is treated with love and dignity</span>
+                                </div>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-medical-teal mr-3 text-xl">🏥</span>
+                                <div>
+                                    <strong data-en="Excellence:" data-hi="उत्कृष्टता:">Excellence:</strong>
+                                    <span data-en=" Advanced medical care with proven outcomes" data-hi=" सिद्ध परिणामों के साथ उन्नत चिकित्सा देखभाल"> Advanced medical care with proven outcomes</span>
+                                </div>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-medical-teal mr-3 text-xl">🌈</span>
+                                <div>
+                                    <strong data-en="Inclusivity:" data-hi="समावेशिता:">Inclusivity:</strong>
+                                    <span data-en=" Welcoming all families and communities" data-hi=" सभी परिवारों और समुदायों का स्वागत करता है"> Welcoming all families and communities</span>
+                                </div>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-medical-teal mr-3 text-xl">🕐</span>
+                                <div>
+                                    <strong data-en="Availability:" data-hi="उपलब्धता:">Availability:</strong>
+                                    <span data-en=" 24/7 commitment to emergency care" data-hi=" इमरजेंसी केयर के लिए 24/7 प्रतिबद्धता"> 24/7 commitment to emergency care</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="relative">
+                    <img src="resources/hero-emergency-care.jpg" alt="SUPERPETS veterinary team providing care" class="rounded-lg shadow-2xl w-full h-auto">
+                    <div class="absolute -bottom-6 -right-6 bg-medical-teal text-white p-6 rounded-lg shadow-lg">
+                        <div class="text-center">
+                            <div class="text-3xl font-bold stats-counter" data-target="792">0</div>
+                            <div class="text-sm" data-en="Happy Families Served" data-hi="सेवा किए गए खुश परिवार">Happy Families Served</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Hospital Timeline -->
+    <section class="py-20 bg-soft-gray animate-on-scroll">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-16 text-deep-navy" data-en="Our Journey" data-hi="हमारी यात्रा">Our Journey</h2>
+            
+            <div class="max-w-4xl mx-auto">
+                <div class="space-y-12">
+                    <div class="timeline-item flex items-start gap-6">
+                        <div class="timeline-dot w-12 h-12 bg-medical-teal text-white rounded-full flex items-center justify-center font-bold text-lg flex-shrink-0">
+                            2022
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="text-2xl font-semibold mb-3 text-medical-teal" data-en="Founding Vision" data-hi="स्थापना दृष्टि">Founding Vision</h3>
+                            <p class="text-gray-700 leading-relaxed" data-en="SUPERPETS was founded with a vision to create a veterinary hospital that combines medical excellence with compassionate care. Our founders recognized the need for 24/7 emergency services and comprehensive specialty care under one roof." data-hi="सुपरपेट्स की स्थापना चिकित्सा उत्कृष्टता को करुणामय देखभाल के साथ जोड़ने वाले एक पशु चिकित्सा अस्पताल बनाने की दृष्टि से की गई थी। हमारे संस्थापकों ने 24/7 इमरजेंसी सेवाओं और एक ही छत के नीचे व्यापक विशेष देखभाल की आवश्यकता को पहचाना।">
+                                SUPERPETS was founded with a vision to create a veterinary hospital that combines medical excellence with compassionate care. Our founders recognized the need for 24/7 emergency services and comprehensive specialty care under one roof.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item flex items-start gap-6">
+                        <div class="timeline-dot w-12 h-12 bg-warm-gold text-white rounded-full flex items-center justify-center font-bold text-lg flex-shrink-0">
+                            2023
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="text-2xl font-semibold mb-3 text-warm-gold" data-en="Facility Development" data-hi="सुविधा विकास">Facility Development</h3>
+                            <p class="text-gray-700 leading-relaxed" data-en="We established our state-of-the-art facility in Khar West, Mumbai, equipped with modern surgical suites, ICU monitoring, diagnostic imaging, and physiotherapy rehabilitation centers. Every detail was designed for optimal pet care and family comfort." data-hi="हमने खार वेस्ट, मुंबई में अपनी अत्याधुनिक सुविधा स्थापित की, जिसमें आधुनिक सर्जिकल सुइट्स, ICU मॉनिटरिंग, डायग्नोस्टिक इमेजिंग और फिजियोथेरेपी पुनर्वास केंद्र शामिल हैं। हर विवरण इष्टतम पालतू देखभाल और पारिवारिक आराम के लिए डिज़ाइन किया गया था।">
+                                We established our state-of-the-art facility in Khar West, Mumbai, equipped with modern surgical suites, ICU monitoring, diagnostic imaging, and physiotherapy rehabilitation centers. Every detail was designed for optimal pet care and family comfort.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item flex items-start gap-6">
+                        <div class="timeline-dot w-12 h-12 bg-success-green text-white rounded-full flex items-center justify-center font-bold text-lg flex-shrink-0">
+                            2024
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="text-2xl font-semibold mb-3 text-success-green" data-en="Team Building" data-hi="टीम निर्माण">Team Building</h3>
+                            <p class="text-gray-700 leading-relaxed" data-en="We assembled a team of experienced veterinary specialists, emergency care experts, and compassionate support staff. Each team member shares our commitment to excellence and our inclusive, welcoming approach to pet care." data-hi="हमने अनुभवी पशु चिकित्सा विशेषज्ञों, इमरजेंसी केयर विशेषज्ञों और करुणामय सपोर्ट स्टाफ की एक टीम तैयार की। प्रत्येक टीम सदस्य उत्कृष्टता के लिए हमारी प्रतिबद्धता और पालतू देखभाल के लिए हमारे समावेशी, स्वागतयोग्य दृष्टिकोण को साझा करता है।">
+                                We assembled a team of experienced veterinary specialists, emergency care experts, and compassionate support staff. Each team member shares our commitment to excellence and our inclusive, welcoming approach to pet care.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item flex items-start gap-6">
+                        <div class="timeline-dot w-12 h-12 bg-deep-navy text-white rounded-full flex items-center justify-center font-bold text-lg flex-shrink-0">
+                            2025
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="text-2xl font-semibold mb-3 text-deep-navy" data-en="Growth & Recognition" data-hi="वृद्धि और मान्यता">Growth & Recognition</h3>
+                            <p class="text-gray-700 leading-relaxed" data-en="Today, SUPERPETS serves hundreds of families with a 4.2★ rating from 792+ reviews. We've become known for our exceptional emergency care, successful complex surgeries, and life-changing physiotherapy outcomes. Our second facility is planned to serve even more families." data-hi="आज, सुपरपेट्स 792+ समीक्षाओं से 4.2★ रेटिंग के साथ सैकड़ों परिवारों की सेवा करता है। हम अपने असाधारण इमरजेंसी केयर, सफल जटिल सर्जरी और जीवन बदलने वाले फिजियोथेरेपी परिणामों के लिए जाना जाता है। हमारी दूसरी सुविधा और भी अधिक परिवारों की सेवा करने की योजना बना रही है।">
+                                Today, SUPERPETS serves hundreds of families with a 4.2★ rating from 792+ reviews. We've become known for our exceptional emergency care, successful complex surgeries, and life-changing physiotherapy outcomes. Our second facility is planned to serve even more families.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Meet the Team -->
+    <section class="py-20 bg-white animate-on-scroll">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-16 text-deep-navy" data-en="Meet Our Expert Team" data-hi="हमारे विशेषज्ञ टीम से मिलें">Meet Our Expert Team</h2>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Lead Veterinarian -->
+                <div class="team-card bg-soft-gray p-6 rounded-lg shadow-lg text-center">
+                    <div class="w-24 h-24 bg-medical-teal text-white rounded-full flex items-center justify-center text-3xl font-bold mx-auto mb-4">
+                        Dr.A
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2 text-deep-navy">Dr. Anita Sharma</h3>
+                    <p class="text-medical-teal font-medium mb-3" data-en="Lead Veterinarian & Founder" data-hi="लीड वेटरिनेरियन और संस्थापक">Lead Veterinarian & Founder</p>
+                    <p class="text-gray-600 text-sm mb-4" data-en="15+ years experience in emergency and critical care. Specializes in complex surgeries and GDV treatment." data-hi="इमरजेंसी और क्रिटिकल केयर में 15+ वर्षों का अनुभव। जटिल सर्जरी और GDV उपचार में विशेषज्ञता।">
+                        15+ years experience in emergency and critical care. Specializes in complex surgeries and GDV treatment.
+                    </p>
+                    <div class="flex justify-center space-x-2">
+                        <span class="bg-medical-teal text-white px-2 py-1 rounded text-xs" data-en="M.V.Sc" data-hi="M.V.Sc">M.V.Sc</span>
+                        <span class="bg-warm-gold text-white px-2 py-1 rounded text-xs" data-en="Emergency Care" data-hi="इमरजेंसी केयर">Emergency Care</span>
+                    </div>
+                </div>
+                
+                <!-- Surgery Specialist -->
+                <div class="team-card bg-soft-gray p-6 rounded-lg shadow-lg text-center">
+                    <div class="w-24 h-24 bg-warm-gold text-white rounded-full flex items-center justify-center text-3xl font-bold mx-auto mb-4">
+                        Dr.R
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2 text-deep-navy">Dr. Rohan Patel</h3>
+                    <p class="text-medical-teal font-medium mb-3" data-en="Surgery Specialist" data-hi="सर्जरी विशेषज्ञ">Surgery Specialist</p>
+                    <p class="text-gray-600 text-sm mb-4" data-en="Expert in orthopedic and soft tissue surgery. 12+ years of surgical experience with outstanding outcomes." data-hi="ऑर्थोपेडिक और सॉफ्ट टिश्यू सर्जरी में विशेषज्ञ। उत्कृष्ट परिणामों के साथ 12+ वर्षों की सर्जिकल अनुभव।">
+                        Expert in orthopedic and soft tissue surgery. 12+ years of surgical experience with outstanding outcomes.
+                    </p>
+                    <div class="flex justify-center space-x-2">
+                        <span class="bg-medical-teal text-white px-2 py-1 rounded text-xs" data-en="Diplomate" data-hi="डिप्लोमेट">Diplomate</span>
+                        <span class="bg-warm-gold text-white px-2 py-1 rounded text-xs" data-en="Surgery" data-hi="सर्जरी">Surgery</span>
+                    </div>
+                </div>
+                
+                <!-- Physiotherapy Specialist -->
+                <div class="team-card bg-soft-gray p-6 rounded-lg shadow-lg text-center">
+                    <div class="w-24 h-24 bg-success-green text-white rounded-full flex items-center justify-center text-3xl font-bold mx-auto mb-4">
+                        Dr.P
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2 text-deep-navy">Dr. Priya Desai</h3>
+                    <p class="text-medical-teal font-medium mb-3" data-en="Physiotherapy Specialist" data-hi="फिजियोथेरेपी विशेषज्ञ">Physiotherapy Specialist</p>
+                    <p class="text-gray-600 text-sm mb-4" data-en="Rehabilitation and pain management expert. Helps pets recover mobility and quality of life after injury or surgery." data-hi="पुनर्वास और दर्द प्रबंधन विशेषज्ञ। चोट या सर्जरी के बाद पालतू जानवरों की गतिशीलता और जीवन की गुणवत्ता को पुनर्प्राप्त करने में मदद करता है।">
+                        Rehabilitation and pain management expert. Helps pets recover mobility and quality of life after injury or surgery.
+                    </p>
+                    <div class="flex justify-center space-x-2">
+                        <span class="bg-medical-teal text-white px-2 py-1 rounded text-xs" data-en="Certified" data-hi="प्रमाणित">Certified</span>
+                        <span class="bg-success-green text-white px-2 py-1 rounded text-xs" data-en="Physiotherapy" data-hi="फिजियोथेरेपी">Physiotherapy</span>
+                    </div>
+                </div>
+                
+                <!-- Emergency Veterinarian -->
+                <div class="team-card bg-soft-gray p-6 rounded-lg shadow-lg text-center">
+                    <div class="w-24 h-24 bg-alert-red text-white rounded-full flex items-center justify-center text-3xl font-bold mx-auto mb-4">
+                        Dr.M
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2 text-deep-navy">Dr. Meera Kapoor</h3>
+                    <p class="text-medical-teal font-medium mb-3" data-en="Emergency Veterinarian" data-hi="इमरजेंसी वेटरिनेरियन">Emergency Veterinarian</p>
+                    <p class="text-gray-600 text-sm mb-4" data-en="Critical care specialist available 24/7. Expert in trauma management and emergency stabilization." data-hi="24/7 उपलब्ध क्रिटिकल केयर विशेषज्ञ। ट्रॉमा मैनेजमेंट और इमरजेंसी स्थिरीकरण में विशेषज्ञ।">
+                        Critical care specialist available 24/7. Expert in trauma management and emergency stabilization.
+                    </p>
+                    <div class="flex justify-center space-x-2">
+                        <span class="bg-medical-teal text-white px-2 py-1 rounded text-xs" data-en="B.V.Sc" data-hi="B.V.Sc">B.V.Sc</span>
+                        <span class="bg-alert-red text-white px-2 py-1 rounded text-xs" data-en="Emergency" data-hi="इमरजेंसी">Emergency</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Credentials & Certifications -->
+    <section class="py-20 bg-medical-teal text-white animate-on-scroll">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-16" data-en="Credentials & Certifications" data-hi="प्रमाणपत्र और प्रमाणन">Credentials & Certifications</h2>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-white text-medical-teal rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">
+                        ✅
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3" data-en="Licensed Facility" data-hi="लाइसेंस्ड सुविधा">Licensed Facility</h3>
+                    <p class="opacity-90" data-en="Maharashtra Veterinary Council Licensed" data-hi="महाराष्ट्र पशु चिकित्सा परिषद लाइसेंस्ड">Maharashtra Veterinary Council Licensed</p>
+                </div>
+                
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-white text-medical-teal rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">
+                        🏥
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3" data-en="Hospital Standards" data-hi="हॉस्पिटल मानक">Hospital Standards</h3>
+                    <p class="opacity-90" data-en="AAHA Standards Compliant" data-hi="AAHA मानक अनुरूप">AAHA Standards Compliant</p>
+                </div>
+                
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-white text-medical-teal rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">
+                        🌈
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3" data-en="Inclusive Care" data-hi="समावेशी देखभाल">Inclusive Care</h3>
+                    <p class="opacity-90" data-en="LGBTQ+ Friendly Certified" data-hi="LGBTQ+ फ्रेंडली प्रमाणित">LGBTQ+ Friendly Certified</p>
+                </div>
+                
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-white text-medical-teal rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">
+                        ⭐
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3" data-en="Patient Satisfaction" data-hi="रोगी संतुष्टि">Patient Satisfaction</h3>
+                    <p class="opacity-90" data-en="4.2★ Google Rating (792+ reviews)" data-hi="4.2★ Google रेटिंग (792+ समीक्षाएं)">4.2★ Google Rating (792+ reviews)</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Community Involvement -->
+    <section class="py-20 bg-white animate-on-scroll">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-16 text-deep-navy" data-en="Community Involvement" data-hi="समुदाय भागीदारी">Community Involvement</h2>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="text-center">
+                    <div class="text-4xl mb-4">🐕</div>
+                    <h3 class="text-xl font-semibold mb-4 text-medical-teal" data-en="Animal Welfare" data-hi="पशु कल्याण">Animal Welfare</h3>
+                    <p class="text-gray-700 leading-relaxed" data-en="Regular participation in community animal welfare programs, stray animal care initiatives, and adoption drives. We believe in giving back to the animal community." data-hi="समुदाय पशु कल्याण कार्यक्रमों, स्ट्रे पशु देखभाल पहलों और गोद लेने के अभियानों में नियमित भागीदारी। हम पशु समुदाय को वापस देने में विश्वास करते हैं।">
+                        Regular participation in community animal welfare programs, stray animal care initiatives, and adoption drives. We believe in giving back to the animal community.
+                    </p>
+                </div>
+                
+                <div class="text-center">
+                    <div class="text-4xl mb-4">🏳️‍🌈</div>
+                    <h3 class="text-xl font-semibold mb-4 text-medical-teal" data-en="LGBTQ+ Support" data-hi="LGBTQ+ समर्थन">LGBTQ+ Support</h3>
+                    <p class="text-gray-700 leading-relaxed" data-en="Proud supporters of LGBTQ+ community events and initiatives. We create a safe, welcoming environment for all families and their beloved pets." data-hi="LGBTQ+ समुदाय के कार्यक्रमों और पहलों के गर्वित समर्थक। हम सभी परिवारों और उनके प्यारे पालतू जानवरों के लिए एक सुरक्षित, स्वागतयोग्य वातावरण बनाते हैं।">
+                        Proud supporters of LGBTQ+ community events and initiatives. We create a safe, welcoming environment for all families and their beloved pets.
+                    </p>
+                </div>
+                
+                <div class="text-center">
+                    <div class="text-4xl mb-4">🎓</div>
+                    <h3 class="text-xl font-semibold mb-4 text-medical-teal" data-en="Education & Training" data-hi="शिक्षा और प्रशिक्षण">Education & Training</h3>
+                    <p class="text-gray-700 leading-relaxed" data-en="Committed to advancing veterinary medicine through continuous education, research participation, and training the next generation of veterinary professionals." data-hi="निरंतर शिक्षा, अनुसंधान भागीदारी और पशु चिकित्सा पेशेवरों की अगली पीढ़ी को प्रशिक्षित करके पशु चिकित्सा चिकित्सा को आगे बढ़ाने के लिए प्रतिबद्ध।">
+                        Committed to advancing veterinary medicine through continuous education, research participation, and training the next generation of veterinary professionals.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Future Expansion -->
+    <section class="py-20 bg-soft-gray animate-on-scroll">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto text-center">
+                <h2 class="text-4xl font-bold mb-8 text-deep-navy" data-en="🏥 Expanding Our Care" data-hi="🏥 हमारी देखभाल का विस्तार">🏥 Expanding Our Care</h2>
+                <p class="text-xl text-gray-700 mb-8 leading-relaxed" data-en="Due to overwhelming demand and our commitment to serving more families, SUPERPETS is planning a second facility in Mumbai. This expansion will allow us to reach more pets in need while maintaining our high standards of care." data-hi="अत्यधिक मांग और अधिक परिवारों की सेवा करने की हमारी प्रतिबद्धता के कारण, सुपरपेट्स मुंबई में एक दूसरी सुविधा की योजना बना रहा है। यह विस्तार हमें अपनी उच्च देखभाल के मानकों को बनाए रखते हुए अधिक पालतू जानवरों की जरूरतों तक पहुंचने की अनुमति देगा।">
+                    Due to overwhelming demand and our commitment to serving more families, SUPERPETS is planning a second facility in Mumbai. This expansion will allow us to reach more pets in need while maintaining our high standards of care.
+                </p>
+                
+                <div class="bg-medical-teal text-white p-8 rounded-lg">
+                    <h3 class="text-2xl font-bold mb-4" data-en="Stay Updated" data-hi="अपडेट रहें">Stay Updated</h3>
+                    <p class="mb-6" data-en="Be the first to know about our expansion plans, new services, and community events." data-hi="हमारे विस्तार योजनाओं, नई सेवाओं और समुदाय कार्यक्रमों के बारे में पहले जानने वाले बनें।">
+                        Be the first to know about our expansion plans, new services, and community events.
+                    </p>
+                    <button class="bg-white text-medical-teal px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors" data-en="Sign Up for Updates" data-hi="अपडेट के लिए साइन अप करें">
+                        Sign Up for Updates
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="bg-medical-teal text-white py-20">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-4xl font-bold mb-6" data-en="Ready to Experience the SUPERPETS Difference?" data-hi="SUPERPETS के अंतर का अनुभव करने के लिए तैयार हैं?">Ready to Experience the SUPERPETS Difference?</h2>
+            <p class="text-xl mb-8 opacity-90 max-w-3xl mx-auto" data-en="Join hundreds of satisfied families who trust us with their pets' health and wellbeing. Schedule your visit today." data-hi="उन सैकड़ों संतुष्ट परिवारों में शामिल हों जो अपने पालतू जानवरों के स्वास्थ्य और कल्याण पर हमें भरोसा करते हैं। आज ही अपनी यात्रा शेड्यूल करें।">
+                Join hundreds of satisfied families who trust us with their pets' health and wellbeing. Schedule your visit today.
+            </p>
+            
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="contact.html" class="bg-white text-medical-teal px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition-all transform hover:scale-105">
+                    📅 <span data-en="Book Appointment" data-hi="अपॉइंटमेंट बुक करें">Book Appointment</span>
+                </a>
+                <button onclick="emergencyCall()" class="bg-warm-gold text-deep-navy px-8 py-4 rounded-lg font-semibold text-lg hover:bg-yellow-500 transition-all transform hover:scale-105">
+                    📞 <span data-en="Call Emergency" data-hi="इमरजेंसी कॉल करें">Call Emergency</span>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-deep-navy text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-2xl font-bold mb-4">SUPERPETS</h3>
+                    <p class="text-gray-300 leading-relaxed mb-4" data-en="24x7 Veterinary Multi-Speciality Hospital<br>Khar West, Mumbai" data-hi="24x7 वेटरनरी मल्टी-स्पेशलिटी हॉस्पिटल<br>खार वेस्ट, मुंबई">
+                        24x7 Veterinary Multi-Speciality Hospital<br>
+                        Khar West, Mumbai
+                    </p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="bg-medical-teal text-white px-3 py-1 rounded-full text-sm" data-en="LGBTQ+ Friendly" data-hi="LGBTQ+ फ्रेंडली">LGBTQ+ Friendly</span>
+                        <span class="bg-warm-gold text-deep-navy px-3 py-1 rounded-full text-sm" data-en="Women-Owned" data-hi="महिलाओं के स्वामित्व वाला">Women-Owned</span>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4" data-en="Quick Links" data-hi="त्वरित लिंक्स">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="text-gray-300 hover:text-medical-teal" data-en="Home" data-hi="होम">Home</a></li>
+                        <li><a href="services.html" class="text-gray-300 hover:text-medical-teal" data-en="Services" data-hi="सेवाएं">Services</a></li>
+                        <li><a href="about.html" class="text-gray-300 hover:text-medical-teal" data-en="About" data-hi="हमारे बारे में">About</a></li>
+                        <li><a href="contact.html" class="text-gray-300 hover:text-medical-teal" data-en="Contact" data-hi="संपर्क">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4" data-en="Contact" data-hi="संपर्क">Contact</h4>
+                    <ul class="space-y-2 text-gray-300">
+                        <li>📞 <a href="tel:+919821112746" class="hover:text-medical-teal">+91 98211 12746</a></li>
+                        <li>💬 <a href="https://wa.me/919821112746" class="hover:text-medical-teal" target="_blank">WhatsApp</a></li>
+                        <li>📧 <a href="mailto:info@superpetsvets.in" class="hover:text-medical-teal">info@superpetsvets.in</a></li>
+                        <li>🏥 <a href="contact.html" class="hover:text-medical-teal" data-en="Khar West, Mumbai" data-hi="खार वेस्ट, मुंबई">Khar West, Mumbai</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4" data-en="Follow Us" data-hi="हमें फॉलो करें">Follow Us</h4>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-300 hover:text-medical-teal text-xl">📘</a>
+                        <a href="#" class="text-gray-300 hover:text-medical-teal text-xl">📷</a>
+                        <a href="https://maps.google.com" target="_blank" class="text-gray-300 hover:text-medical-teal text-xl">🗺️</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-300">
+                <p>&copy; 2025 SUPERPETS. All Rights Reserved. | 
+                    <a href="#" class="hover:text-medical-teal" data-en="Privacy Policy" data-hi="गोपनीयता नीति">Privacy Policy</a> | 
+                    <a href="#" class="hover:text-medical-teal" data-en="Terms" data-hi="नियम">Terms</a> | 
+                    <a href="#" class="hover:text-medical-teal" data-en="Medical Disclaimer" data-hi="चिकित्सा अस्वीकरण">Medical Disclaimer</a>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Load Main JavaScript -->
+    <script src="main.js"></script>
+</body>
+</html>

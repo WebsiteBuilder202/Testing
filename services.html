@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Veterinary Services | SUPERPETS Multi-Speciality Hospital Mumbai</title>
+    <meta name="description" content="Comprehensive veterinary services: emergency care, surgery, physiotherapy, diagnostics, preventive care, dentistry. 24x7 availability in Khar West, Mumbai.">
+    
+    <!-- SEO Meta Tags -->
+    <meta name="keywords" content="veterinary services Mumbai, pet surgery, animal physiotherapy, veterinary diagnostics, pet dental care, emergency vet services">
+    <meta name="author" content="SUPERPETS - A Veterinary Multi-Speciality LLP">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph Tags -->
+    <meta property="og:title" content="Veterinary Services | SUPERPETS Multi-Speciality Hospital">
+    <meta property="og:description" content="Comprehensive veterinary services available 24x7 in Khar West, Mumbai.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://superpetsvets.in/services.html">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+Devanagari:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Core Libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'medical-teal': '#1CA7A6',
+                        'deep-navy': '#0C1B2A',
+                        'warm-gold': '#F5A623',
+                        'success-green': '#27AE60',
+                        'alert-red': '#E74C3C',
+                        'soft-gray': '#F4F6F8'
+                    },
+                    fontFamily: {
+                        'inter': ['Inter', 'sans-serif'],
+                        'devanagari': ['Noto Sans Devanagari', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        .font-devanagari { font-family: 'Noto Sans Devanagari', sans-serif; }
+        .service-card { transition: all 0.3s ease; }
+        .service-card:hover { transform: translateY(-8px); box-shadow: 0 20px 40px rgba(0,0,0,0.1); }
+        .animate-on-scroll { opacity: 0; transform: translateY(24px); transition: all 0.6s ease-out; }
+        .animate-in { opacity: 1; transform: translateY(0); }
+        .emergency-pulse { animation: pulse 2s infinite; }
+        .service-filter.active { background: #1CA7A6; color: white; }
+        .service-item { display: none; }
+        .service-item.show { display: block; }
+        .booking-modal { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); display: flex; align-items: center; justify-content: center; z-index: 1000; }
+        .modal-content { background: white; border-radius: 12px; max-width: 600px; width: 90%; max-height: 90vh; overflow-y: auto; }
+        .form-input { transition: all 0.3s ease; }
+        .form-input:focus { border-color: #1CA7A6; box-shadow: 0 0 0 3px rgba(28, 167, 166, 0.1); }
+    </style>
+</head>
+
+<body class="font-inter bg-white text-deep-navy">
+    <!-- Emergency Banner -->
+    <div id="emergency-banner" class="bg-alert-red text-white py-3 px-4 fixed top-0 left-0 right-0 z-50 emergency-pulse">
+        <div class="container mx-auto flex flex-col sm:flex-row items-center justify-between text-center sm:text-left">
+            <div class="flex items-center mb-2 sm:mb-0">
+                <span class="text-xl mr-2">🚨</span>
+                <span class="font-semibold text-sm sm:text-base" data-en="24x7 EMERGENCY CARE" data-hi="🚨 24x7 इमरजेंसी केयर">24x7 EMERGENCY CARE</span>
+            </div>
+            <div class="flex flex-col sm:flex-row items-center space-y-2 sm:space-y-0 sm:space-x-4 text-sm">
+                <a href="tel:+919821112746" class="emergency-call font-semibold hover:underline">
+                    📞 Call: +91 98211 12746
+                </a>
+                <a href="https://wa.me/919821112746" class="emergency-whatsapp font-semibold hover:underline" target="_blank">
+                    💬 WhatsApp
+                </a>
+                <a href="contact.html" class="font-semibold hover:underline" data-en="Get Directions" data-hi="दिशानिर्देश">Get Directions</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg fixed top-16 left-0 right-0 z-40">
+        <div class="container mx-auto px-4">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center">
+                    <a href="index.html" class="text-2xl font-bold text-medical-teal">
+                        SUPERPETS
+                    </a>
+                    <span class="ml-2 text-sm text-gray-600" data-en="24x7 Veterinary Hospital" data-hi="24x7 वेटरनरी हॉस्पिटल">24x7 Veterinary Hospital</span>
+                </div>
+                
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="index.html" class="text-deep-navy hover:text-medical-teal font-medium" data-en="Home" data-hi="होम">Home</a>
+                    <a href="services.html" class="text-medical-teal font-medium" data-en="Services" data-hi="सेवाएं">Services</a>
+                    <a href="emergency.html" class="text-alert-red hover:text-red-700 font-medium" data-en="Emergency" data-hi="इमरजेंसी">Emergency</a>
+                    <a href="about.html" class="text-deep-navy hover:text-medical-teal font-medium" data-en="About" data-hi="हमारे बारे में">About</a>
+                    <a href="contact.html" class="text-deep-navy hover:text-medical-teal font-medium" data-en="Contact" data-hi="संपर्क">Contact</a>
+                    <button id="language-toggle" class="bg-medical-teal text-white px-4 py-2 rounded-lg hover:bg-teal-700 transition-colors" onclick="toggleLanguage()">
+                        हिन्दी
+                    </button>
+                </div>
+                
+                <!-- Mobile Menu Toggle -->
+                <button id="mobile-menu-toggle" class="md:hidden p-2">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="mobile-menu md:hidden bg-white border-t">
+            <div class="px-4 py-2 space-y-2">
+                <a href="index.html" class="block py-2 text-deep-navy hover:text-medical-teal" data-en="Home" data-hi="होम">Home</a>
+                <a href="services.html" class="block py-2 text-medical-teal" data-en="Services" data-hi="सेवाएं">Services</a>
+                <a href="emergency.html" class="block py-2 text-alert-red hover:text-red-700" data-en="Emergency" data-hi="इमरजेंसी">Emergency</a>
+                <a href="about.html" class="block py-2 text-deep-navy hover:text-medical-teal" data-en="About" data-hi="हमारे बारे में">About</a>
+                <a href="contact.html" class="block py-2 text-deep-navy hover:text-medical-teal" data-en="Contact" data-hi="संपर्क">Contact</a>
+                <button class="w-full text-left py-2 text-medical-teal font-medium" onclick="toggleLanguage()" data-en="Switch to Hindi" data-hi="Switch to English">Switch to Hindi</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="bg-medical-teal text-white py-20" style="padding-top: 120px;">
+        <div class="container mx-auto px-4 text-center">
+            <h1 class="text-4xl lg:text-5xl font-bold mb-6" data-en="Comprehensive Veterinary Services" data-hi="व्यापक पशु चिकित्सा सेवाएं">Comprehensive Veterinary Services</h1>
+            <p class="text-xl lg:text-2xl mb-8 opacity-90 max-w-3xl mx-auto" data-en="Everything your pet needs under one roof—emergency care, surgery, diagnostics, physiotherapy, and preventive medicine." data-hi="आपके पालतू को एक ही छत के नीचे जो कुछ भी चाहिए—इमरजेंसी केयर, सर्जरी, डायग्नोस्टिक्स, फिजियोथेरेपी, और निवारक चिकित्सा।">
+                Everything your pet needs under one roof—emergency care, surgery, diagnostics, physiotherapy, and preventive medicine.
+            </p>
+        </div>
+    </section>
+
+    <!-- Service Filter -->
+    <section class="py-8 bg-soft-gray">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-wrap justify-center gap-4">
+                <button class="service-filter active px-6 py-3 rounded-lg font-medium transition-colors" data-filter="all" data-en="All Services" data-hi="सभी सेवाएं">All Services</button>
+                <button class="service-filter px-6 py-3 rounded-lg font-medium bg-white text-deep-navy hover:bg-medical-teal hover:text-white transition-colors" data-filter="emergency" data-en="Emergency" data-hi="इमरजेंसी">Emergency</button>
+                <button class="service-filter px-6 py-3 rounded-lg font-medium bg-white text-deep-navy hover:bg-medical-teal hover:text-white transition-colors" data-filter="surgery" data-en="Surgery" data-hi="सर्जरी">Surgery</button>
+                <button class="service-filter px-6 py-3 rounded-lg font-medium bg-white text-deep-navy hover:bg-medical-teal hover:text-white transition-colors" data-filter="rehabilitation" data-en="Physiotherapy" data-hi="फिजियोथेरेपी">Physiotherapy</button>
+                <button class="service-filter px-6 py-3 rounded-lg font-medium bg-white text-deep-navy hover:bg-medical-teal hover:text-white transition-colors" data-filter="diagnostics" data-en="Diagnostics" data-hi="डायग्नोस्टिक्स">Diagnostics</button>
+                <button class="service-filter px-6 py-3 rounded-lg font-medium bg-white text-deep-navy hover:bg-medical-teal hover:text-white transition-colors" data-filter="preventive" data-en="Preventive Care" data-hi="निवारक देखभाल">Preventive Care</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Grid -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="grid lg:grid-cols-2 gap-12">
+                
+                <!-- Emergency & Critical Care -->
+                <div id="emergency-care" class="service-item show bg-soft-gray p-8 rounded-lg shadow-lg animate-on-scroll" data-category="emergency">
+                    <div class="flex items-start gap-6">
+                        <div class="text-4xl">🚨</div>
+                        <div class="flex-1">
+                            <h2 class="text-3xl font-bold mb-4 text-medical-teal" data-en="Emergency & Critical Care" data-hi="इमरजेंसी एंड क्रिटिकल केयर">Emergency & Critical Care</h2>
+                            <p class="text-gray-700 mb-6 leading-relaxed" data-en="When your pet's life is on the line, every second counts. Our emergency team is trained, equipped, and ready 24/7 to stabilize, diagnose, and treat life-threatening conditions with clinical precision and compassion." data-hi="जब आपके पालतू का जीवन दांव पर हो, हर सेकंड मायने रखता है। हमारी इमरजेंसी टीम प्रशिक्षित, सुसज्जित और 24/7 तैयार है ताकि नैदानिक सटीकता और करुणा के साथ जीवन के लिए खतरनाक स्थितियों को स्थिर, निदान और उपचार किया जा सके।">
+                                When your pet's life is on the line, every second counts. Our emergency team is trained, equipped, and ready 24/7 to stabilize, diagnose, and treat life-threatening conditions with clinical precision and compassion.
+                            </p>
+                            
+                            <div class="mb-6">
+                                <h3 class="text-xl font-semibold mb-3" data-en="What We Handle:" data-hi="हम क्या संभालते हैं:">What We Handle:</h3>
+                                <ul class="space-y-2 text-gray-700">
+                                    <li class="flex items-center"><span class="text-medical-teal mr-2">•</span><span data-en="Gastrointestinal Dilatation-Volvulus (GDV) — bloat" data-hi="गैस्ट्रोइंटेस्टाइनल डाइलेटेशन-वोल्वुस (GDV) — सूजन">Gastrointestinal Dilatation-Volvulus (GDV) — bloat</span></li>
+                                    <li class="flex items-center"><span class="text-medical-teal mr-2">•</span><span data-en="Trauma and severe injuries" data-hi="ट्रॉमा और गंभीर चोटें">Trauma and severe injuries</span></li>
+                                    <li class="flex items-center"><span class="text-medical-teal mr-2">•</span><span data-en="Toxin ingestion and poisoning" data-hi="टॉक्सिन ingestion और जहर">Toxin ingestion and poisoning</span></li>
+                                    <li class="flex items-center"><span class="text-medical-teal mr-2">•</span><span data-en="Respiratory distress and choking" data-hi="श्वसन संकट और घुटन">Respiratory distress and choking</span></li>
+                                    <li class="flex items-center"><span class="text-medical-teal mr-2">•</span><span data-en="Seizures and neurological emergencies" data-hi="दौरे और न्यूरोलॉजिकल इमरजेंसीज़">Seizures and neurological emergencies</span></li>
+                                </ul>
+                            </div>
+                            
+                            <div class="flex flex-col sm:flex-row gap-4">
+                                <button onclick="emergencyCall()" class="bg-alert-red text-white px-6 py-3 rounded-lg font-semibold hover:bg-red-700 transition-colors">
+                                    📞 <span data-en="Call Emergency" data-hi="इमरजेंसी कॉल करें">Call Emergency</span>
+                                </button>
+                                <a href="https://wa.me/919821112746" onclick="emergencyWhatsApp()" target="_blank" class="bg-medical-teal text-white px-6 py-3 rounded-lg font-semibold hover:bg-teal-700 transition-colors text-center">
+                                    💬 <span data-en="WhatsApp Now" data-hi="अभी व्हाट्सएप करें">WhatsApp Now</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Surgery & Inpatient Care -->
+                <div id="surgery-care" class="service-item show bg-soft-gray p-8 rounded-lg shadow-lg animate-on-scroll" data-category="surgery">
+                    <div class="flex items-start gap-6">
+                        <div class="text-4xl">🏥</div>
+                        <div class="flex-1">
+                            <h2 class="text-3xl font-bold mb-4 text-medical-teal" data-en="Surgery & Inpatient Care" data-hi="सर्जरी एंड इनपेशेंट केयर">Surgery & Inpatient Care</h2>
+                            <p class="text-gray-700 mb-6 leading-relaxed" data-en="From routine spaying/neutering to emergency abdominal surgery, our experienced veterinary surgeons work in a sterile operating theatre with full anesthetic monitoring. Patients recover in our ICU with 24x7 nursing care." data-hi="रूटीन स्पेइंग/न्यूटरिंग से लेकर इमरजेंसी पेट की सर्जरी तक, हमारे अनुभवी पशु चिकित्सक सर्जन पूर्ण एनेस्थेटिक मॉनिटरिंग के साथ एक स्टेराइल ऑपरेटिंग थिएटर में काम करते हैं। रोगी हमारे ICU में 24x7 नर्सिंग केयर के साथ रिकवर करते हैं।">
+                                From routine spaying/neutering to emergency abdominal surgery, our experienced veterinary surgeons work in a sterile operating theatre with full anesthetic monitoring. Patients recover in our ICU with 24x7 nursing care.
+                            </p>
+                            
+                            <div class="mb-6">
+                                <h3 class="text-xl font-semibold mb-3" data-en="Common Procedures:" data-hi="सामान्य प्रक्रियाएं:">Common Procedures:</h3>
+                                <ul class="space-y-2 text-gray-700">
+                                    <li class="flex items-center"><span class="text-medical-teal mr-2">•</span><span data-en="Spay and neuter" data-hi="स्पे और न्यूटर">Spay and neuter</span></li>
+                                    <li class="flex items-center"><span class="text-medical-teal mr-2">•</span><span data-en="Abdominal surgery (GDV, foreign body, mass removal)" data-hi="पेट की सर्जरी (GDV, विदेशी वस्तु, मास हटाना)">Abdominal surgery (GDV, foreign body, mass removal)</span></li>
+                                    <li class="flex items-center"><span class="text-medical-teal mr-2">•</span><span data-en="Orthopedic surgery (fractures, ligament repair)" data-hi="ऑर्थोपेडिक सर्जरी (फ्रैक्चर, लिगामेंट रिपेयर)">Orthopedic surgery (fractures, ligament repair)</span></li>
+                                    <li class="flex items-center"><span class="text-medical-teal mr-2">•</span><span data-en="Tumor removal and biopsy" data-hi="ट्यूमर हटाना और बायोप्सी">Tumor removal and biopsy</span></li>
+                                </ul>
+                            </div>
+                            
+                            <button class="service-booking bg-medical-teal text-white px-6 py-3 rounded-lg font-semibold hover:bg-teal-700 transition-colors" data-service="surgery">
+                                📅 <span data-en="Book Consultation" data-hi="कंसल्टेशन बुक करें">Book Consultation</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Physiotherapy & Rehabilitation -->
+                <div id="physiotherapy-care" class="service-item show bg-soft-gray p-8 rounded-lg shadow-lg animate-on-scroll" data-category="rehabilitation">
+                    <div class="flex items-start gap-6">
+                        <div class="text-4xl">🦵</div>
+                        <div class="flex-1">
+                            <h2 class="text-3xl font-bold mb-4 text-medical-teal" data-en="Physiotherapy & Rehabilitation" data-hi="फिजियोथेरेपी एंड रिहैबिलिटेशन">Physiotherapy & Rehabilitation</h2>
+                            <p class="text-gray-700 mb-6 leading-relaxed" data-en="Recovery doesn't end with discharge. Our evidence-based physiotherapy programs help pets regain strength, mobility, and quality of life after surgery, injury, or chronic illness." data-hi="डिस्चार्ज के साथ रिकवरी समाप्त नहीं होती। हमारे साक्ष्य-आधारित फिजियोथेरेपी कार्यक्रम पालतू जानवरों को सर्जरी, चोट या पुरानी बीमारी के बाद शक्ति, गतिशीलता और जीवन की गुणवत्ता हासिल करने में मदद करते हैं।">
+                                Recovery doesn't end with discharge. Our evidence-based physiotherapy programs help pets regain strength, mobility, and quality of life after surgery, injury, or chronic illness.
+                            </p>
+                            
+                            <div class="mb-6">
+                                <h3 class="text-xl font-semibold mb-3" data-en="Conditions We Treat:" data-hi="हम जिन स्थितियों का इलाज करते हैं:">Conditions We Treat:</h3>
+                                <ul class="space-y-2 text-gray-700">
+                                    <li class="flex items-center"><span class="text-medical-teal mr-2">•</span><span data-en="Post-operative mobility (after surgery)" data-hi="सर्जरी के बाद गतिशीलता">Post-operative mobility (after surgery)</span></li>
+                                    <li class="flex items-center"><span class="text-medical-teal mr-2">•</span><span data-en="Spinal and orthopedic injuries" data-hi="रीढ़ और ऑर्थोपेडिक चोटें">Spinal and orthopedic injuries</span></li>
+                                    <li class="flex items-center"><span class="text-medical-teal mr-2">•</span><span data-en="Arthritis and chronic pain" data-hi="आर्थ्राइटिस और पुराना दर्द">Arthritis and chronic pain</span></li>
+                                    <li class="flex items-center"><span class="text-medical-teal mr-2">•</span><span data-en="Neurological conditions" data-hi="न्यूरोलॉजिकल स्थितियां">Neurological conditions</span></li>
+                                </ul>
+                            </div>
+                            
+                            <div class="bg-medical-teal bg-opacity-10 p-4 rounded-lg mb-6">
+                                <h4 class="font-semibold text-medical-teal mb-2" data-en="Success Story:" data-hi="सक्सेस स्टोरी:">Success Story:</h4>
+                                <p class="text-gray-700 italic" data-en="&quot;My German Shepherd couldn't walk after surgery and spinal complications. After physiotherapy with SuperPets, he went from non-ambulatory to running and playing. The regular follow-ups and tailored care made all the difference.&quot; — Pet Parent" data-hi="&quot;मेरा जर्मन शेफर्ड सर्जरी और रीढ़ की जटिलताओं के बाद नहीं चल सकता था। सुपरपेट्स के साथ फिजियोथेरेपी के बाद, वह गैर-चलने योग्य से दौड़ने और खेलने लगा। नियमित फॉलो-अप और तैयार की गई देखभाल ने सबसे बड़ा अंतर पैदा किया।&quot; — पालतू माता-पिता">
+                                    "My German Shepherd couldn't walk after surgery and spinal complications. After physiotherapy with SuperPets, he went from non-ambulatory to running and playing. The regular follow-ups and tailored care made all the difference." — Pet Parent
+                                </p>
+                            </div>
+                            
+                            <button class="service-booking bg-medical-teal text-white px-6 py-3 rounded-lg font-semibold hover:bg-teal-700 transition-colors" data-service="physiotherapy">
+                                📅 <span data-en="Book Physio Consultation" data-hi="फिजियो कंसल्टेशन बुक करें">Book Physio Consultation</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Diagnostics & Imaging -->
+                <div id="diagnostics-care" class="service-item show bg-soft-gray p-8 rounded-lg shadow-lg animate-on-scroll" data-category="diagnostics">
+                    <div class="flex items-start gap-6">
+                        <div class="text-4xl">🔬</div>
+                        <div class="flex-1">
+                            <h2 class="text-3xl font-bold mb-4 text-medical-teal" data-en="Diagnostics & Imaging" data-hi="डायग्नोस्टिक्स एंड इमेजिंग">Diagnostics & Imaging</h2>
+                            <p class="text-gray-700 mb-6 leading-relaxed" data-en="Quick, precise diagnosis guides the right treatment. Our in-house lab and imaging equipment mean rapid results and informed decisions—without delays." data-hi="त्वरित, सटीक निदान सही उपचार का मार्गदर्शन करता है। हमारे इन-हाउस लैब और इमेजिंग उपकरणों का अर्थ है तेजी से परिणाम और सूचित निर्णय—बिना देरी के।">
+                                Quick, precise diagnosis guides the right treatment. Our in-house lab and imaging equipment mean rapid results and informed decisions—without delays.
+                            </p>
+                            
+                            <div class="mb-6">
+                                <h3 class="text-xl font-semibold mb-3" data-en="Available Services:" data-hi="उपलब्ध सेवाएं:">Available Services:</h3>
+                                <ul class="space-y-2 text-gray-700">
+                                    <li class="flex items-center"><span class="text-medical-teal mr-2">•</span><span data-en="Digital X-ray (chest, abdomen, orthopedic)" data-hi="डिजिटल एक्स-रे (छाती, पेट, ऑर्थोपेडिक)">Digital X-ray (chest, abdomen, orthopedic)</span></li>
+                                    <li class="flex items-center"><span class="text-medical-teal mr-2">•</span><span data-en="Ultrasound (abdominal, cardiac)" data-hi="अल्ट्रासाउंड (पेट, कार्डियक)">Ultrasound (abdominal, cardiac)</span></li>
+                                    <li class="flex items-center"><span class="text-medical-teal mr-2">•</span><span data-en="Blood work (CBC, chemistry, thyroid profiles)" data-hi="ब्लड वर्क (CBC, केमिस्ट्री, थायरॉयड प्रोफाइल्स)">Blood work (CBC, chemistry, thyroid profiles)</span></li>
+                                    <li class="flex items-center"><span class="text-medical-teal mr-2">•</span><span data-en="Urinalysis and fecal examination" data-hi="यूरिनलिसिस और मल परीक्षा">Urinalysis and fecal examination</span></li>
+                                </ul>
+                            </div>
+                            
+                            <div class="bg-success-green bg-opacity-10 p-4 rounded-lg mb-6">
+                                <h4 class="font-semibold text-success-green mb-2" data-en="Why In-House?" data-hi="इन-हाउस क्यों?">Why In-House?</h4>
+                                <ul class="text-gray-700 space-y-1">
+                                    <li class="flex items-center"><span class="text-success-green mr-2">✓</span><span data-en="Results in hours, not days" data-hi="घंटों में परिणाम, दिनों में नहीं">Results in hours, not days</span></li>
+                                    <li class="flex items-center"><span class="text-success-green mr-2">✓</span><span data-en="Reduces stress (no external lab transport)" data-hi="तनाव कम करता है (कोई बाहरी लैब ट्रांसपोर्ट नहीं)">Reduces stress (no external lab transport)</span></li>
+                                    <li class="flex items-center"><span class="text-success-green mr-2">✓</span><span data-en="Faster treatment decisions" data-hi="त्वरित उपचार निर्णय">Faster treatment decisions</span></li>
+                                </ul>
+                            </div>
+                            
+                            <button class="service-booking bg-medical-teal text-white px-6 py-3 rounded-lg font-semibold hover:bg-teal-700 transition-colors" data-service="diagnostics">
+                                📞 <span data-en="Schedule Diagnostics" data-hi="डायग्नोस्टिक्स शेड्यूल करें">Schedule Diagnostics</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Preventive Care & Wellness -->
+                <div id="preventive-care" class="service-item show bg-soft-gray p-8 rounded-lg shadow-lg animate-on-scroll" data-category="preventive">
+                    <div class="flex items-start gap-6">
+                        <div class="text-4xl">💊</div>
+                        <div class="flex-1">
+                            <h2 class="text-3xl font-bold mb-4 text-medical-teal" data-en="Preventive Care & Wellness" data-hi="निवारक देखभाल और कल्याण">Preventive Care & Wellness</h2>
+                            <p class="text-gray-700 mb-6 leading-relaxed" data-en="Prevention is the best medicine. Regular wellness exams, vaccinations, and parasite control keep your pet healthy and catch issues early." data-hi="निवारण सबसे अच्छी दवा है। नियमित वेलनेस परीक्षा, टीकाकरण और परजीवी नियंत्रण आपके पालतू को स्वस्थ रखता है और समस्याओं को शुरुआती चरण में पकड़ता है।">
+                                Prevention is the best medicine. Regular wellness exams, vaccinations, and parasite control keep your pet healthy and catch issues early.
+                            </p>
+                            
+                            <div class="mb-6">
+                                <h3 class="text-xl font-semibold mb-3" data-en="Services:" data-hi="सेवाएं:">Services:</h3>
+                                <ul class="space-y-2 text-gray-700">
+                                    <li class="flex items-center"><span class="text-medical-teal mr-2">•</span><span data-en="Annual wellness exams" data-hi="वार्षिक वेलनेस परीक्षा">Annual wellness exams</span></li>
+                                    <li class="flex items-center"><span class="text-medical-teal mr-2">•</span><span data-en="Vaccination programs" data-hi="टीकाकरण कार्यक्रम">Vaccination programs</span></li>
+                                    <li class="flex items-center"><span class="text-medical-teal mr-2">•</span><span data-en="Parasite prevention" data-hi="परजीवी निवारण">Parasite prevention</span></li>
+                                    <li class="flex items-center"><span class="text-medical-teal mr-2">•</span><span data-en="Dental checks and cleaning" data-hi="डेंटल जांच और सफाई">Dental checks and cleaning</span></li>
+                                    <li class="flex items-center"><span class="text-medical-teal mr-2">•</span><span data-en="Nutrition counseling" data-hi="पोषण परामर्श">Nutrition counseling</span></li>
+                                    <li class="flex items-center"><span class="text-medical-teal mr-2">•</span><span data-en="Microchipping" data-hi="माइक्रोचिपिंग">Microchipping</span></li>
+                                </ul>
+                            </div>
+                            
+                            <button class="service-booking bg-medical-teal text-white px-6 py-3 rounded-lg font-semibold hover:bg-teal-700 transition-colors" data-service="preventive">
+                                📅 <span data-en="Book Wellness Exam" data-hi="वेलनेस परीक्षा बुक करें">Book Wellness Exam</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Dentistry & Dermatology -->
+                <div id="dentistry-care" class="service-item show bg-soft-gray p-8 rounded-lg shadow-lg animate-on-scroll" data-category="preventive">
+                    <div class="flex items-start gap-6">
+                        <div class="text-4xl">🦷</div>
+                        <div class="flex-1">
+                            <h2 class="text-3xl font-bold mb-4 text-medical-teal" data-en="Dentistry & Dermatology" data-hi="डेंटिस्ट्री एंड डर्मेटोलॉजी">Dentistry & Dermatology</h2>
+                            <p class="text-gray-700 mb-6 leading-relaxed" data-en="Dental disease and skin allergies are common but preventable. Our specialized care keeps your pet's teeth and skin in top condition." data-hi="डेंटल रोग और त्वचा एलर्जी आम हैं लेकिन रोके जा सकते हैं। हमारी विशेष देखभाल आपके पालतू के दांतों और त्वचा को शीर्ष स्थिति में रखती है।">
+                                Dental disease and skin allergies are common but preventable. Our specialized care keeps your pet's teeth and skin in top condition.
+                            </p>
+                            
+                            <div class="grid md:grid-cols-2 gap-6 mb-6">
+                                <div>
+                                    <h3 class="text-lg font-semibold mb-3 text-medical-teal" data-en="Dental Services:" data-hi="डेंटल सेवाएं:">Dental Services:</h3>
+                                    <ul class="space-y-2 text-gray-700">
+                                        <li class="flex items-center"><span class="text-medical-teal mr-2">•</span><span data-en="Preventive cleaning" data-hi="निवारक सफाई">Preventive cleaning</span></li>
+                                        <li class="flex items-center"><span class="text-medical-teal mr-2">•</span><span data-en="Tartar removal" data-hi="टार्टर हटाना">Tartar removal</span></li>
+                                        <li class="flex items-center"><span class="text-medical-teal mr-2">•</span><span data-en="Tooth extraction" data-hi="दांत निष्कर्षण">Tooth extraction</span></li>
+                                        <li class="flex items-center"><span class="text-medical-teal mr-2">•</span><span data-en="Dental radiography" data-hi="डेंटल रेडियोग्राफी">Dental radiography</span></li>
+                                    </ul>
+                                </div>
+                                
+                                <div>
+                                    <h3 class="text-lg font-semibold mb-3 text-medical-teal" data-en="Dermatology Services:" data-hi="डर्मेटोलॉजी सेवाएं:">Dermatology Services:</h3>
+                                    <ul class="space-y-2 text-gray-700">
+                                        <li class="flex items-center"><span class="text-medical-teal mr-2">•</span><span data-en="Allergy management" data-hi="एलर्जी प्रबंधन">Allergy management</span></li>
+                                        <li class="flex items-center"><span class="text-medical-teal mr-2">•</span><span data-en="Ear infection treatment" data-hi="कान के संक्रमण का इलाज">Ear infection treatment</span></li>
+                                        <li class="flex items-center"><span class="text-medical-teal mr-2">•</span><span data-en="Skin infection treatment" data-hi="त्वचा संक्रमण का इलाज">Skin infection treatment</span></li>
+                                        <li class="flex items-center"><span class="text-medical-teal mr-2">•</span><span data-en="Nutritional consultation" data-hi="पोषण परामर्श">Nutritional consultation</span></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <button class="service-booking bg-medical-teal text-white px-6 py-3 rounded-lg font-semibold hover:bg-teal-700 transition-colors" data-service="dentistry">
+                                📅 <span data-en="Book Dental/Derma Consultation" data-hi="डेंटल/डर्मा कंसल्टेशन बुक करें">Book Dental/Derma Consultation</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="py-20 bg-medical-teal text-white">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-4xl font-bold mb-6" data-en="Ready to Book an Appointment?" data-hi="अपॉइंटमेंट बुक करने के लिए तैयार हैं?">Ready to Book an Appointment?</h2>
+            <p class="text-xl mb-8 opacity-90" data-en="Our team is here to provide the best care for your beloved pet." data-hi="हमारी टीम आपके प्यारे पालतू के लिए सबसे अच्छी देखभाल प्रदान करने के लिए यहां है।">
+                Our team is here to provide the best care for your beloved pet.
+            </p>
+            
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="contact.html" class="bg-white text-medical-teal px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition-all transform hover:scale-105">
+                    📅 <span data-en="Book Appointment" data-hi="अपॉइंटमेंट बुक करें">Book Appointment</span>
+                </a>
+                <button onclick="emergencyCall()" class="bg-warm-gold text-deep-navy px-8 py-4 rounded-lg font-semibold text-lg hover:bg-yellow-500 transition-all transform hover:scale-105">
+                    📞 <span data-en="Call Emergency" data-hi="इमरजेंसी कॉल करें">Call Emergency</span>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-deep-navy text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-2xl font-bold mb-4">SUPERPETS</h3>
+                    <p class="text-gray-300 leading-relaxed mb-4" data-en="24x7 Veterinary Multi-Speciality Hospital<br>Khar West, Mumbai" data-hi="24x7 वेटरनरी मल्टी-स्पेशलिटी हॉस्पिटल<br>खार वेस्ट, मुंबई">
+                        24x7 Veterinary Multi-Speciality Hospital<br>
+                        Khar West, Mumbai
+                    </p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="bg-medical-teal text-white px-3 py-1 rounded-full text-sm" data-en="LGBTQ+ Friendly" data-hi="LGBTQ+ फ्रेंडली">LGBTQ+ Friendly</span>
+                        <span class="bg-warm-gold text-deep-navy px-3 py-1 rounded-full text-sm" data-en="Women-Owned" data-hi="महिलाओं के स्वामित्व वाला">Women-Owned</span>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4" data-en="Quick Links" data-hi="त्वरित लिंक्स">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="text-gray-300 hover:text-medical-teal" data-en="Home" data-hi="होम">Home</a></li>
+                        <li><a href="services.html" class="text-gray-300 hover:text-medical-teal" data-en="Services" data-hi="सेवाएं">Services</a></li>
+                        <li><a href="about.html" class="text-gray-300 hover:text-medical-teal" data-en="About" data-hi="हमारे बारे में">About</a></li>
+                        <li><a href="contact.html" class="text-gray-300 hover:text-medical-teal" data-en="Contact" data-hi="संपर्क">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4" data-en="Contact" data-hi="संपर्क">Contact</h4>
+                    <ul class="space-y-2 text-gray-300">
+                        <li>📞 <a href="tel:+919821112746" class="hover:text-medical-teal">+91 98211 12746</a></li>
+                        <li>💬 <a href="https://wa.me/919821112746" class="hover:text-medical-teal" target="_blank">WhatsApp</a></li>
+                        <li>📧 <a href="mailto:info@superpetsvets.in" class="hover:text-medical-teal">info@superpetsvets.in</a></li>
+                        <li>🏥 <a href="contact.html" class="hover:text-medical-teal" data-en="Khar West, Mumbai" data-hi="खार वेस्ट, मुंबई">Khar West, Mumbai</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4" data-en="Follow Us" data-hi="हमें फॉलो करें">Follow Us</h4>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-300 hover:text-medical-teal text-xl">📘</a>
+                        <a href="#" class="text-gray-300 hover:text-medical-teal text-xl">📷</a>
+                        <a href="https://maps.google.com" target="_blank" class="text-gray-300 hover:text-medical-teal text-xl">🗺️</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-300">
+                <p>&copy; 2025 SUPERPETS. All Rights Reserved. | 
+                    <a href="#" class="hover:text-medical-teal" data-en="Privacy Policy" data-hi="गोपनीयता नीति">Privacy Policy</a> | 
+                    <a href="#" class="hover:text-medical-teal" data-en="Terms" data-hi="नियम">Terms</a> | 
+                    <a href="#" class="hover:text-medical-teal" data-en="Medical Disclaimer" data-hi="चिकित्सा अस्वीकरण">Medical Disclaimer</a>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Load Main JavaScript -->
+    <script src="main.js"></script>
+    
+    <script>
+        // Service filtering functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const filterButtons = document.querySelectorAll('.service-filter');
+            const serviceItems = document.querySelectorAll('.service-item');
+            
+            filterButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const filter = this.getAttribute('data-filter');
+                    
+                    // Update active button
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    // Filter services
+                    serviceItems.forEach(item => {
+                        if (filter === 'all' || item.getAttribute('data-category') === filter) {
+                            item.classList.add('show');
+                            item.style.display = 'block';
+                        } else {
+                            item.classList.remove('show');
+                            item.style.display = 'none';
+                        }
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emergency Veterinary Care 24x7 | SUPERPETS Hospital Mumbai</title>
+    <meta name="description" content="24x7 emergency veterinary care in Mumbai. GDV, trauma, poisoning, respiratory distress. Immediate response. Call +91 98211 12746 or WhatsApp now.">
+    
+    <!-- SEO Meta Tags -->
+    <meta name="keywords" content="emergency vet Mumbai, 24 hour vet, GDV treatment, pet trauma care, animal poisoning treatment, veterinary ICU, emergency surgery">
+    <meta name="author" content="SUPERPETS - A Veterinary Multi-Speciality LLP">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph Tags -->
+    <meta property="og:title" content="Emergency Veterinary Care 24x7 | SUPERPETS Hospital Mumbai">
+    <meta property="og:description" content="24x7 emergency veterinary care in Mumbai. Immediate response for pet emergencies.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://superpetsvets.in/emergency.html">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+Devanagari:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Core Libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'medical-teal': '#1CA7A6',
+                        'deep-navy': '#0C1B2A',
+                        'warm-gold': '#F5A623',
+                        'success-green': '#27AE60',
+                        'alert-red': '#E74C3C',
+                        'soft-gray': '#F4F6F8'
+                    },
+                    fontFamily: {
+                        'inter': ['Inter', 'sans-serif'],
+                        'devanagari': ['Noto Sans Devanagari', 'sans-serif']
+                    },
+                    animation: {
+                        'pulse-fast': 'pulse 1s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                        'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite'
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        .font-devanagari { font-family: 'Noto Sans Devanagari', sans-serif; }
+        .animate-on-scroll { opacity: 0; transform: translateY(24px); transition: all 0.6s ease-out; }
+        .animate-in { opacity: 1; transform: translateY(0); }
+        .emergency-pulse { animation: pulse 2s infinite; }
+        .emergency-pulse-fast { animation: pulse 1s infinite; }
+        .triage-form { background: linear-gradient(135deg, #E74C3C 0%, #C0392B 100%); }
+        .emergency-card { transition: all 0.3s ease; }
+        .emergency-card:hover { transform: translateY(-4px); box-shadow: 0 10px 30px rgba(231, 76, 60, 0.3); }
+        .symptom-checker { max-height: 0; overflow: hidden; transition: max-height 0.3s ease; }
+        .symptom-checker.active { max-height: 500px; }
+        .emergency-button { transition: all 0.3s ease; }
+        .emergency-button:hover { transform: scale(1.05); box-shadow: 0 8px 25px rgba(0,0,0,0.2); }
+    </style>
+</head>
+
+<body class="font-inter bg-white text-deep-navy">
+    <!-- Emergency Banner -->
+    <div id="emergency-banner" class="bg-alert-red text-white py-4 px-4 fixed top-0 left-0 right-0 z-50 emergency-pulse-fast">
+        <div class="container mx-auto flex flex-col sm:flex-row items-center justify-between text-center sm:text-left">
+            <div class="flex items-center mb-2 sm:mb-0">
+                <span class="text-2xl mr-2">🚨</span>
+                <span class="font-bold text-lg sm:text-xl" data-en="24x7 EMERGENCY CARE ACTIVE" data-hi="🚨 24x7 इमरजेंसी केयर सक्रिय">24x7 EMERGENCY CARE ACTIVE</span>
+            </div>
+            <div class="flex flex-col sm:flex-row items-center space-y-2 sm:space-y-0 sm:space-x-6">
+                <a href="tel:+919821112746" class="emergency-call font-bold text-lg hover:underline bg-white text-alert-red px-4 py-2 rounded-lg" onclick="emergencyCall()">
+                    📞 CALL: +91 98211 12746
+                </a>
+                <a href="https://wa.me/919821112746" class="emergency-whatsapp font-bold text-lg hover:underline bg-white text-alert-red px-4 py-2 rounded-lg" onclick="emergencyWhatsApp()" target="_blank">
+                    💬 WHATSAPP EMERGENCY
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg fixed top-20 left-0 right-0 z-40">
+        <div class="container mx-auto px-4">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center">
+                    <a href="index.html" class="text-2xl font-bold text-medical-teal">
+                        SUPERPETS
+                    </a>
+                    <span class="ml-2 text-sm text-gray-600" data-en="24x7 Emergency Hospital" data-hi="24x7 इमरजेंसी हॉस्पिटल">24x7 Emergency Hospital</span>
+                </div>
+                
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="index.html" class="text-deep-navy hover:text-medical-teal font-medium" data-en="Home" data-hi="होम">Home</a>
+                    <a href="services.html" class="text-deep-navy hover:text-medical-teal font-medium" data-en="Services" data-hi="सेवाएं">Services</a>
+                    <a href="emergency.html" class="text-alert-red font-bold" data-en="Emergency" data-hi="इमरजेंसी">Emergency</a>
+                    <a href="about.html" class="text-deep-navy hover:text-medical-teal font-medium" data-en="About" data-hi="हमारे बारे में">About</a>
+                    <a href="contact.html" class="text-deep-navy hover:text-medical-teal font-medium" data-en="Contact" data-hi="संपर्क">Contact</a>
+                    <button id="language-toggle" class="bg-medical-teal text-white px-4 py-2 rounded-lg hover:bg-teal-700 transition-colors" onclick="toggleLanguage()">
+                        हिन्दी
+                    </button>
+                </div>
+                
+                <!-- Mobile Menu Toggle -->
+                <button id="mobile-menu-toggle" class="md:hidden p-2">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="mobile-menu md:hidden bg-white border-t">
+            <div class="px-4 py-2 space-y-2">
+                <a href="index.html" class="block py-2 text-deep-navy hover:text-medical-teal" data-en="Home" data-hi="होम">Home</a>
+                <a href="services.html" class="block py-2 text-deep-navy hover:text-medical-teal" data-en="Services" data-hi="सेवाएं">Services</a>
+                <a href="emergency.html" class="block py-2 text-alert-red font-bold" data-en="Emergency" data-hi="इमरजेंसी">Emergency</a>
+                <a href="about.html" class="block py-2 text-deep-navy hover:text-medical-teal" data-en="About" data-hi="हमारे बारे में">About</a>
+                <a href="contact.html" class="block py-2 text-deep-navy hover:text-medical-teal" data-en="Contact" data-hi="संपर्क">Contact</a>
+                <button class="w-full text-left py-2 text-medical-teal font-medium" onclick="toggleLanguage()" data-en="Switch to Hindi" data-hi="Switch to English">Switch to Hindi</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="triage-form text-white py-20" style="padding-top: 140px;">
+        <div class="container mx-auto px-4 text-center">
+            <h1 class="text-4xl lg:text-6xl font-bold mb-6" data-en="24x7 Emergency & Critical Care" data-hi="24x7 इमरजेंसी एंड क्रिटिकल केयर">24x7 Emergency & Critical Care</h1>
+            <p class="text-xl lg:text-2xl mb-8 opacity-90 max-w-4xl mx-auto leading-relaxed" data-en="When your pet's life is on the line, every second counts. Our emergency team is trained, equipped, and ready 24/7 to stabilize, diagnose, and treat life-threatening conditions." data-hi="जब आपके पालतू का जीवन दांव पर हो, हर सेकंड मायने रखता है। हमारी इमरजेंसी टीम प्रशिक्षित, सुसज्जित और 24/7 तैयार है ताकि जीवन के लिए खतरनाक स्थितियों को स्थिर, निदान और उपचार किया जा सके।">
+                When your pet's life is on the line, every second counts. Our emergency team is trained, equipped, and ready 24/7 to stabilize, diagnose, and treat life-threatening conditions.
+            </p>
+            
+            <!-- Emergency Contact Cards -->
+            <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto mb-12">
+                <div class="emergency-card bg-white bg-opacity-20 backdrop-blur-sm p-8 rounded-lg border border-white border-opacity-30">
+                    <div class="text-4xl mb-4">📞</div>
+                    <h3 class="text-2xl font-bold mb-4" data-en="Emergency Hotline" data-hi="इमरजेंसी हॉटलाइन">Emergency Hotline</h3>
+                    <p class="mb-6" data-en="Call us immediately for any pet emergency" data-hi="किसी भी पालतू आपातकाल के लिए हमें तुरंत कॉल करें">Call us immediately for any pet emergency</p>
+                    <button onclick="emergencyCall()" class="emergency-button bg-white text-alert-red px-8 py-4 rounded-lg font-bold text-xl hover:bg-gray-100 transition-all">
+                        +91 98211 12746
+                    </button>
+                </div>
+                
+                <div class="emergency-card bg-white bg-opacity-20 backdrop-blur-sm p-8 rounded-lg border border-white border-opacity-30">
+                    <div class="text-4xl mb-4">💬</div>
+                    <h3 class="text-2xl font-bold mb-4" data-en="WhatsApp Emergency" data-hi="व्हाट्सएप इमरजेंसी">WhatsApp Emergency</h3>
+                    <p class="mb-6" data-en="Send photos and get immediate guidance" data-hi="फोटो भेजें और तुरंत मार्गदर्शन प्राप्त करें">Send photos and get immediate guidance</p>
+                    <a href="https://wa.me/919821112746" onclick="emergencyWhatsApp()" target="_blank" class="emergency-button bg-white text-alert-red px-8 py-4 rounded-lg font-bold text-xl hover:bg-gray-100 transition-all inline-block">
+                        WhatsApp Now
+                    </a>
+                </div>
+            </div>
+            
+            <div class="bg-white bg-opacity-10 backdrop-blur-sm p-6 rounded-lg max-w-2xl mx-auto">
+                <div class="flex items-center justify-center mb-4">
+                    <div class="w-3 h-3 bg-green-400 rounded-full mr-3 emergency-pulse-fast"></div>
+                    <span class="text-lg font-semibold" data-en="Emergency Team Status: ACTIVE" data-hi="इमरजेंसी टीम स्थिति: सक्रिय">Emergency Team Status: ACTIVE</span>
+                </div>
+                <p class="opacity-90" data-en="Our emergency team is on-site and ready to assist you 24/7. Average response time: Under 5 minutes." data-hi="हमारी इमरजेंसी टीम ऑन-साइट है और 24/7 आपकी सहायता के लिए तैयार है। औसत प्रतिक्रिया समय: 5 मिनट से कम।">
+                    Our emergency team is on-site and ready to assist you 24/7. Average response time: Under 5 minutes.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Emergency Conditions -->
+    <section class="py-20 bg-white animate-on-scroll">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-16 text-deep-navy" data-en="Emergency Conditions We Treat" data-hi="हम जिन इमरजेंसी स्थितियों का इलाज करते हैं">Emergency Conditions We Treat</h2>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- GDV -->
+                <div class="emergency-card bg-alert-red text-white p-8 rounded-lg shadow-lg">
+                    <div class="text-4xl mb-4">⚠️</div>
+                    <h3 class="text-2xl font-bold mb-4" data-en="GDV (Bloat)" data-hi="GDV (सूजन)">GDV (Bloat)</h3>
+                    <p class="mb-6 opacity-90" data-en="Life-threatening stomach twisting. Immediate surgery required." data-hi="जीवन के लिए खतरनाक पेट मरोड़। तुरंत सर्जरी आवश्यक।">
+                        Life-threatening stomach twisting. Immediate surgery required.
+                    </p>
+                    <div class="text-sm opacity-75" data-en="Signs: Restlessness, unproductive vomiting, distended belly" data-hi="लक्षण: बेचैनी, अप्रभावी उल्टी, सूजा हुआ पेट">
+                        Signs: Restlessness, unproductive vomiting, distended belly
+                    </div>
+                </div>
+                
+                <!-- Trauma -->
+                <div class="emergency-card bg-deep-navy text-white p-8 rounded-lg shadow-lg">
+                    <div class="text-4xl mb-4">🏥</div>
+                    <h3 class="text-2xl font-bold mb-4" data-en="Trauma & Injuries" data-hi="ट्रॉमा और चोटें">Trauma & Injuries</h3>
+                    <p class="mb-6 opacity-90" data-en="Accidents, falls, bites. Stabilization and surgical care." data-hi="दुर्घटनाएं, गिरना, काटना। स्थिरीकरण और सर्जिकल देखभाल।">
+                        Accidents, falls, bites. Stabilization and surgical care.
+                    </p>
+                    <div class="text-sm opacity-75" data-en="Includes: Fractures, wounds, internal injuries" data-hi="शामिल हैं: फ्रैक्चर, घाव, आंतरिक चोटें">
+                        Includes: Fractures, wounds, internal injuries
+                    </div>
+                </div>
+                
+                <!-- Poisoning -->
+                <div class="emergency-card bg-warm-gold text-deep-navy p-8 rounded-lg shadow-lg">
+                    <div class="text-4xl mb-4">☠️</div>
+                    <h3 class="text-2xl font-bold mb-4" data-en="Toxin Ingestion" data-hi="टॉक्सिन ingestion">Toxin Ingestion</h3>
+                    <p class="mb-6 opacity-90" data-en="Poisonous substances, human medications, toxic foods." data-hi="जहरीले पदार्थ, मानव दवाएं, विषाक्त भोजन।">
+                        Poisonous substances, human medications, toxic foods.
+                    </p>
+                    <div class="text-sm opacity-75" data-en="Common: Chocolate, rat poison, household cleaners" data-hi="सामान्य: चॉकलेट, चूहे का जहर, घरेलू क्लीनर">
+                        Common: Chocolate, rat poison, household cleaners
+                    </div>
+                </div>
+                
+                <!-- Respiratory -->
+                <div class="emergency-card bg-medical-teal text-white p-8 rounded-lg shadow-lg">
+                    <div class="text-4xl mb-4">🫁</div>
+                    <h3 class="text-2xl font-bold mb-4" data-en="Respiratory Distress" data-hi="श्वसन संकट">Respiratory Distress</h3>
+                    <p class="mb-6 opacity-90" data-en="Breathing difficulties, choking, airway obstructions." data-hi="सांस लेने में कठिनाई, घुटन, वायुमार्ग अवरोध।">
+                        Breathing difficulties, choking, airway obstructions.
+                    </p>
+                    <div class="text-sm opacity-75" data-en="Critical: Oxygen therapy may be needed immediately" data-hi="गंभीर: ऑक्सीजन थेरेपी की तुरंत आवश्यकता हो सकती है">
+                        Critical: Oxygen therapy may be needed immediately
+                    </div>
+                </div>
+                
+                <!-- Seizures -->
+                <div class="emergency-card bg-deep-navy text-white p-8 rounded-lg shadow-lg">
+                    <div class="text-4xl mb-4">⚡</div>
+                    <h3 class="text-2xl font-bold mb-4" data-en="Seizures" data-hi="दौरे">Seizures</h3>
+                    <p class="mb-6 opacity-90" data-en="Neurological emergencies, epilepsy, toxin reactions." data-hi="न्यूरोलॉजिकल इमरजेंसीज़, मिर्गी, टॉक्सिन प्रतिक्रियाएं।">
+                        Neurological emergencies, epilepsy, toxin reactions.
+                    </p>
+                    <div class="text-sm opacity-75" data-en="Multiple seizures or prolonged episodes are emergencies" data-hi="एक से अधिक दौरे या लंबे समय तक चलने वाले एपिसोड इमरजेंसी हैं">
+                        Multiple seizures or prolonged episodes are emergencies
+                    </div>
+                </div>
+                
+                <!-- Critical Care -->
+                <div class="emergency-card bg-success-green text-white p-8 rounded-lg shadow-lg">
+                    <div class="text-4xl mb-4">💔</div>
+                    <h3 class="text-2xl font-bold mb-4" data-en="Cardiac Emergency" data-hi="कार्डियक इमरजेंसी">Cardiac Emergency</h3>
+                    <p class="mb-6 opacity-90" data-en="Heart failure, arrhythmias, severe dehydration." data-hi="हार्ट फेलियर, अरिदमिया, गंभीर डिहाइड्रेशन।">
+                        Heart failure, arrhythmias, severe dehydration.
+                    </p>
+                    <div class="text-sm opacity-75" data-en="ICU monitoring and cardiac support available" data-hi="ICU मॉनिटरिंग और कार्डियक सपोर्ट उपलब्ध">
+                        ICU monitoring and cardiac support available
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Emergency Protocol -->
+    <section class="py-20 bg-soft-gray animate-on-scroll">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-16 text-deep-navy" data-en="Our Emergency Protocol" data-hi="हमारा इमरजेंसी प्रोटोकॉल">Our Emergency Protocol</h2>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-alert-red text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">1</div>
+                    <h3 class="text-xl font-semibold mb-4 text-alert-red" data-en="Immediate Triage" data-hi="तत्काल ट्राइएज">Immediate Triage</h3>
+                    <p class="text-gray-700" data-en="Assess severity, stabilize airway/breathing/circulation" data-hi="गंभीरता का आकलन, वायुमार्ग/सांस/संचार को स्थिर करें">
+                        Assess severity, stabilize airway/breathing/circulation
+                    </p>
+                </div>
+                
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-medical-teal text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">2</div>
+                    <h3 class="text-xl font-semibold mb-4 text-medical-teal" data-en="Rapid Diagnostics" data-hi="तेजी से निदान">Rapid Diagnostics</h3>
+                    <p class="text-gray-700" data-en="X-ray, ultrasound, bloodwork (on-site)" data-hi="एक्स-रे, अल्ट्रासाउंड, ब्लड वर्क (ऑन-साइट)">
+                        X-ray, ultrasound, bloodwork (on-site)
+                    </p>
+                </div>
+                
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-warm-gold text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">3</div>
+                    <h3 class="text-xl font-semibold mb-4 text-warm-gold" data-en="Treatment" data-hi="उपचार">Treatment</h3>
+                    <p class="text-gray-700" data-en="Medication, fluids, surgery, or intensive monitoring" data-hi="दवा, द्रव, सर्जरी, या गहन निगरानी">
+                        Medication, fluids, surgery, or intensive monitoring
+                    </p>
+                </div>
+                
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-success-green text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">4</div>
+                    <h3 class="text-xl font-semibold mb-4 text-success-green" data-en="Recovery" data-hi="वसूली">Recovery</h3>
+                    <p class="text-gray-700" data-en="ICU care until stable, follow-up planning" data-hi="स्थिर होने तक ICU देखभाल, फॉलो-अप योजना">
+                        ICU care until stable, follow-up planning
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Emergency Triage Tool -->
+    <section class="py-20 bg-white animate-on-scroll">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto">
+                <h2 class="text-4xl font-bold text-center mb-8 text-deep-navy" data-en="Emergency Symptom Checker" data-hi="इमरजेंसी लक्षण चेकर">Emergency Symptom Checker</h2>
+                <p class="text-center text-gray-600 mb-12 text-lg" data-en="Quick assessment to help determine if your pet needs immediate emergency care." data-hi="त्वरित आकलन यह निर्धारित करने में मदद करता है कि क्या आपके पालतू को तुरंत इमरजेंसी केयर की आवश्यकता है।">
+                    Quick assessment to help determine if your pet needs immediate emergency care.
+                </p>
+                
+                <div class="bg-soft-gray p-8 rounded-lg shadow-lg">
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <div>
+                            <h3 class="text-2xl font-semibold mb-6 text-alert-red" data-en="⚠️ SEEK IMMEDIATE CARE IF:" data-hi="⚠️ तुरंत देखभाल लें यदि:">⚠️ SEEK IMMEDIATE CARE IF:</h3>
+                            <ul class="space-y-4">
+                                <li class="flex items-start">
+                                    <span class="text-alert-red mr-3 text-xl">🚨</span>
+                                    <span data-en="Difficulty breathing or choking" data-hi="सांस लेने में कठिनाई या घुटन">Difficulty breathing or choking</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-alert-red mr-3 text-xl">🚨</span>
+                                    <span data-en="Unconscious or non-responsive" data-hi="बेहोश या गैर-प्रतिक्रियाशील">Unconscious or non-responsive</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-alert-red mr-3 text-xl">🚨</span>
+                                    <span data-en="Severe bleeding that won't stop" data-hi="गंभीर रक्तस्राव जो रुक नहीं रहा">Severe bleeding that won't stop</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-alert-red mr-3 text-xl">🚨</span>
+                                    <span data-en="Seizures lasting more than 2 minutes" data-hi="2 मिनट से अधिक समय तक चलने वाले दौरे">Seizures lasting more than 2 minutes</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-alert-red mr-3 text-xl">🚨</span>
+                                    <span data-en="Suspected poisoning" data-hi="संदिग्ध विषाक्तता">Suspected poisoning</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-alert-red mr-3 text-xl">🚨</span>
+                                    <span data-en="Distended, hard abdomen (possible GDV)" data-hi="सूजा हुआ, कठोर पेट (संभावित GDV)">Distended, hard abdomen (possible GDV)</span>
+                                </li>
+                            </ul>
+                            
+                            <div class="mt-8 p-4 bg-alert-red bg-opacity-10 rounded-lg">
+                                <p class="text-alert-red font-semibold text-center" data-en="🚨 CALL +91 98211 12746 IMMEDIATELY 🚨" data-hi="🚨 तुरंत +91 98211 12746 पर कॉल करें 🚨">
+                                    🚨 CALL +91 98211 12746 IMMEDIATELY 🚨
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <h3 class="text-2xl font-semibold mb-6 text-warm-gold" data-en="⚡ URGENT - Call Within 2 Hours:" data-hi="⚡ तत्काल - 2 घंटे के भीतर कॉल करें:">⚡ URGENT - Call Within 2 Hours:</h3>
+                            <ul class="space-y-4">
+                                <li class="flex items-start">
+                                    <span class="text-warm-gold mr-3 text-xl">⚠️</span>
+                                    <span data-en="Persistent vomiting or diarrhea" data-hi="लगातार उल्टी या दस्त">Persistent vomiting or diarrhea</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-warm-gold mr-3 text-xl">⚠️</span>
+                                    <span data-en="Unable to urinate or defecate" data-hi="पेशाब या मल त्याग करने में असमर्थ">Unable to urinate or defecate</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-warm-gold mr-3 text-xl">⚠️</span>
+                                    <span data-en="Severe lameness or inability to walk" data-hi="गंभीर लंगड़ापन या चलने में असमर्थता">Severe lameness or inability to walk</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-warm-gold mr-3 text-xl">⚠️</span>
+                                    <span data-en="Eye injuries or sudden blindness" data-hi="आंख की चोटें या अचानक अंधापन">Eye injuries or sudden blindness</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-warm-gold mr-3 text-xl">⚠️</span>
+                                    <span data-en="High fever (above 39.5°C)" data-hi="उच्च बुखार (39.5°C से ऊपर)">High fever (above 39.5°C)</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-warm-gold mr-3 text-xl">⚠️</span>
+                                    <span data-en="Multiple seizures in short period" data-hi="कम समय में एकाधिक दौरे">Multiple seizures in short period</span>
+                                </li>
+                            </ul>
+                            
+                            <div class="mt-8 p-4 bg-warm-gold bg-opacity-10 rounded-lg">
+                                <p class="text-warm-gold font-semibold text-center" data-en="⚡ CALL +91 98211 12746 TODAY ⚡" data-hi="⚡ आज +91 98211 12746 पर कॉल करें ⚡">
+                                    ⚡ CALL +91 98211 12746 TODAY ⚡
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Emergency Preparedness -->
+    <section class="py-20 bg-medical-teal text-white animate-on-scroll">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-16" data-en="Emergency Preparedness" data-hi="आपातकालीन तत्परता">Emergency Preparedness</h2>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="text-center">
+                    <div class="text-4xl mb-4">📋</div>
+                    <h3 class="text-xl font-semibold mb-4" data-en="First Aid Kit" data-hi="प्रथम उपचार किट">First Aid Kit</h3>
+                    <ul class="text-left space-y-2 opacity-90">
+                        <li data-en="• Gauze and bandages" data-hi="• गॉज और बैंडेज">• Gauze and bandages</li>
+                        <li data-en="• Antiseptic solution" data-hi="• एंटीसेप्टिक सॉल्यूशन">• Antiseptic solution</li>
+                        <li data-en="• Digital thermometer" data-hi="• डिजिटल थर्मामीटर">• Digital thermometer</li>
+                        <li data-en="• Emergency contact list" data-hi="• आपातकालीन संपर्क सूची">• Emergency contact list</li>
+                    </ul>
+                </div>
+                
+                <div class="text-center">
+                    <div class="text-4xl mb-4">🚗</div>
+                    <h3 class="text-xl font-semibold mb-4" data-en="Transportation" data-hi="परिवहन">Transportation</h3>
+                    <ul class="text-left space-y-2 opacity-90">
+                        <li data-en="• Know the route to hospital" data-hi="• अस्पताल तक रूट जानें">• Know the route to hospital</li>
+                        <li data-en="• Keep pet carrier ready" data-hi="• पालतू वाहक तैयार रखें">• Keep pet carrier ready</li>
+                        <li data-en="• Drive safely but quickly" data-hi="• सुरक्षित लेकिन तेजी से चलाएं">• Drive safely but quickly</li>
+                        <li data-en="• Call ahead when possible" data-hi="• संभव हो तो आगे कॉल करें">• Call ahead when possible</li>
+                    </ul>
+                </div>
+                
+                <div class="text-center">
+                    <div class="text-4xl mb-4">📞</div>
+                    <h3 class="text-xl font-semibold mb-4" data-en="Emergency Contacts" data-hi="आपातकालीन संपर्क">Emergency Contacts</h3>
+                    <ul class="text-left space-y-2 opacity-90">
+                        <li data-en="• SUPERPETS: +91 98211 12746" data-hi="• सुपरपेट्स: +91 98211 12746">• SUPERPETS: +91 98211 12746</li>
+                        <li data-en="• WhatsApp: Available 24/7" data-hi="• व्हाट्सएप: 24/7 उपलब्ध">• WhatsApp: Available 24/7</li>
+                        <li data-en="• Location: Khar West, Mumbai" data-hi="• स्थान: खार वेस्ट, मुंबई">• Location: Khar West, Mumbai</li>
+                        <li data-en="• Plus Code: 3R8P+Q3" data-hi="• प्लस कोड: 3R8P+Q3">• Plus Code: 3R8P+Q3</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Location & Directions -->
+    <section class="py-20 bg-white animate-on-scroll">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-16 text-deep-navy" data-en="Find Us Quickly in Emergency" data-hi="आपातकालीन स्थिति में हमें जल्दी खोजें">Find Us Quickly in Emergency</h2>
+            
+            <div class="grid lg:grid-cols-2 gap-12">
+                <div>
+                    <div class="bg-alert-red text-white p-6 rounded-lg mb-8">
+                        <h3 class="text-2xl font-bold mb-4" data-en="🚨 EMERGENCY LOCATION" data-hi="🚨 इमरजेंसी स्थान">🚨 EMERGENCY LOCATION</h3>
+                        <div class="space-y-3">
+                            <p class="text-lg" data-en="📍 Ground to 3rd Floor, Mee Mee Tower" data-hi="📍 ग्राउंड से 3rd फ्लोर, मी मी टावर">
+                                📍 Ground to 3rd Floor, Mee Mee Tower
+                            </p>
+                            <p class="text-lg" data-en="🛣️ 8th Rd, Khar West, Mumbai 400052" data-hi="🛣️ 8th रोड, खार वेस्ट, मुंबई 400052">
+                                🛣️ 8th Rd, Khar West, Mumbai 400052
+                            </p>
+                            <p class="text-lg" data-en="🗺️ Plus Code: 3R8P+Q3" data-hi="🗺️ प्लस कोड: 3R8P+Q3">
+                                🗺️ Plus Code: 3R8P+Q3
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="space-y-6">
+                        <div>
+                            <h3 class="text-xl font-semibold mb-3 text-medical-teal" data-en="🚗 Parking Available" data-hi="🚗 पार्किंग उपलब्ध">🚗 Parking Available</h3>
+                            <p class="text-gray-700" data-en="Free parking at Mee Mee Tower facility. Follow signs for SUPERPETS emergency entrance." data-hi="मी मी टावर सुविधा में मुफ्त पार्किंग। SUPERPETS इमरजेंसी प्रवेश द्वार के लिए संकेतों का पालन करें।">
+                                Free parking at Mee Mee Tower facility. Follow signs for SUPERPETS emergency entrance.
+                            </p>
+                        </div>
+                        
+                        <div>
+                            <h3 class="text-xl font-semibold mb-3 text-medical-teal" data-en="🚇 Public Transport" data-hi="🚇 सार्वजनिक परिवहन">🚇 Public Transport</h3>
+                            <p class="text-gray-700" data-en="Nearest stations: Khar Road (1.2km), Bandra (2.1km). Auto-rickshaw available 24/7." data-hi="निकटतम स्टेशन: खार रोड (1.2किमी), बांद्रा (2.1किमी)。ऑटो-रिक्शा 24/7 उपलब्ध।">
+                                Nearest stations: Khar Road (1.2km), Bandra (2.1km). Auto-rickshaw available 24/7.
+                            </p>
+                        </div>
+                        
+                        <div>
+                            <h3 class="text-xl font-semibold mb-3 text-medical-teal" data-en="⏰ 24/7 Access" data-hi="⏰ 24/7 पहुंच">⏰ 24/7 Access</h3>
+                            <p class="text-gray-700" data-en="Emergency entrance always open. Ring bell for after-hours admission." data-hi="इमरजेंसी प्रवेश द्वार हमेशा खुला। आफ्टर-ऑवर्स प्रवेश के लिए घंटी बजाएं।">
+                                Emergency entrance always open. Ring bell for after-hours admission.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div>
+                    <div class="bg-gray-200 rounded-lg h-96 flex items-center justify-center">
+                        <div class="text-center">
+                            <div class="text-4xl mb-4">🗺️</div>
+                            <h3 class="text-xl font-semibold mb-2" data-en="Emergency Directions" data-hi="इमरजेंसी दिशानिर्देश">Emergency Directions</h3>
+                            <p class="text-gray-600 mb-4" data-en="Google Maps with real-time navigation" data-hi="Google मानचित्र वास्तविक समय नेविगेशन के साथ">Google Maps with real-time navigation</p>
+                            <a href="contact.html" class="bg-alert-red text-white px-6 py-3 rounded-lg hover:bg-red-700 transition-colors font-semibold" data-en="Get Emergency Directions" data-hi="इमरजेंसी दिशानिर्देश प्राप्त करें">
+                                Get Emergency Directions
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Emergency CTA -->
+    <section class="bg-alert-red text-white py-16">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-4xl font-bold mb-6" data-en="🚨 Your Pet Needs Emergency Care Right Now?" data-hi="🚨 आपके पालतू को अभी इमरजेंसी केयर की जरूरत है?">🚨 Your Pet Needs Emergency Care Right Now?</h2>
+            <p class="text-xl mb-8 opacity-90" data-en="Don't wait. Every minute counts in an emergency. Our team is ready to help 24/7." data-hi="प्रतीक्षा न करें। आपातकालीन स्थिति में हर मिनट मायने रखता है। हमारी टीम 24/7 मदद के लिए तैयार है।">
+                Don't wait. Every minute counts in an emergency. Our team is ready to help 24/7.
+            </p>
+            
+            <div class="flex flex-col sm:flex-row gap-6 justify-center items-center">
+                <button onclick="emergencyCall()" class="emergency-button bg-white text-alert-red px-12 py-6 rounded-lg font-bold text-2xl hover:bg-gray-100 transition-all">
+                    📞 CALL NOW: +91 98211 12746
+                </button>
+                <a href="https://wa.me/919821112746" onclick="emergencyWhatsApp()" target="_blank" class="emergency-button bg-white text-alert-red px-12 py-6 rounded-lg font-bold text-2xl hover:bg-gray-100 transition-all">
+                    💬 WHATSAPP EMERGENCY
+                </a>
+            </div>
+            
+            <div class="mt-8">
+                <p class="text-lg opacity-90" data-en="📍 We're located at: Mee Mee Tower, Khar West, Mumbai | Plus Code: 3R8P+Q3" data-hi="📍 हम स्थित हैं: मी मी टावर, खार वेस्ट, मुंबई | प्लस कोड: 3R8P+Q3">
+                    📍 We're located at: Mee Mee Tower, Khar West, Mumbai | Plus Code: 3R8P+Q3
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-deep-navy text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-2xl font-bold mb-4">SUPERPETS</h3>
+                    <p class="text-gray-300 leading-relaxed mb-4" data-en="24x7 Veterinary Multi-Speciality Hospital<br>Khar West, Mumbai" data-hi="24x7 वेटरनरी मल्टी-स्पेशलिटी हॉस्पिटल<br>खार वेस्ट, मुंबई">
+                        24x7 Veterinary Multi-Speciality Hospital<br>
+                        Khar West, Mumbai
+                    </p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="bg-medical-teal text-white px-3 py-1 rounded-full text-sm" data-en="LGBTQ+ Friendly" data-hi="LGBTQ+ फ्रेंडली">LGBTQ+ Friendly</span>
+                        <span class="bg-warm-gold text-deep-navy px-3 py-1 rounded-full text-sm" data-en="Women-Owned" data-hi="महिलाओं के स्वामित्व वाला">Women-Owned</span>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4" data-en="Quick Links" data-hi="त्वरित लिंक्स">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="text-gray-300 hover:text-medical-teal" data-en="Home" data-hi="होम">Home</a></li>
+                        <li><a href="services.html" class="text-gray-300 hover:text-medical-teal" data-en="Services" data-hi="सेवाएं">Services</a></li>
+                        <li><a href="about.html" class="text-gray-300 hover:text-medical-teal" data-en="About" data-hi="हमारे बारे में">About</a></li>
+                        <li><a href="contact.html" class="text-gray-300 hover:text-medical-teal" data-en="Contact" data-hi="संपर्क">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4" data-en="Emergency Contact" data-hi="आपातकालीन संपर्क">Emergency Contact</h4>
+                    <ul class="space-y-2 text-gray-300">
+                        <li>🚨 <a href="tel:+919821112746" class="hover:text-medical-teal font-bold">+91 98211 12746</a></li>
+                        <li>💬 <a href="https://wa.me/919821112746" class="hover:text-medical-teal" target="_blank">WhatsApp Emergency</a></li>
+                        <li>📧 <a href="mailto:emergency@superpetsvets.in" class="hover:text-medical-teal">emergency@superpetsvets.in</a></li>
+                        <li>🏥 <a href="contact.html" class="hover:text-medical-teal" data-en="Khar West, Mumbai" data-hi="खार वेस्ट, मुंबई">Khar West, Mumbai</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4" data-en="Follow Us" data-hi="हमें फॉलो करें">Follow Us</h4>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-300 hover:text-medical-teal text-xl">📘</a>
+                        <a href="#" class="text-gray-300 hover:text-medical-teal text-xl">📷</a>
+                        <a href="https://maps.google.com" target="_blank" class="text-gray-300 hover:text-medical-teal text-xl">🗺️</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-300">
+                <p>&copy; 2025 SUPERPETS. All Rights Reserved. | 
+                    <a href="#" class="hover:text-medical-teal" data-en="Privacy Policy" data-hi="गोपनीयता नीति">Privacy Policy</a> | 
+                    <a href="#" class="hover:text-medical-teal" data-en="Terms" data-hi="नियम">Terms</a> | 
+                    <a href="#" class="hover:text-medical-teal" data-en="Medical Disclaimer" data-hi="चिकित्सा अस्वीकरण">Medical Disclaimer</a>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Load Main JavaScript -->
+    <script src="main.js"></script>
+</body>
+</html>
